@@ -108,18 +108,6 @@ body #header .header-top {
 	font-size: 0;
 	text-align: center;
 }
-body #header .header-top .header-right {
-	float: none;
-	padding-top: 0;
-}
-body #header .header-top .header-right .region-header-right {
-	float: none;
-	text-align: right;
-}
-body #header .header-top .header-right .region-header-right #block-menu-menu-secondary-menu {
-	float: none;
-	visibility: visible;
-}
 body #header .site-information a {
 	margin-bottom: -6px;
 	display: inline-block;
@@ -139,7 +127,7 @@ body #main {
 	background-color: transparent;
 }
 body #main #contentFull {
-	min-height: none;
+	min-height: 0;
 	background-color: transparent;
 }
 body #main #contentFull .container {
@@ -187,7 +175,9 @@ body #footer a { color: white; }
 	margin-bottom: 50px;
 	padding-bottom: 50px;
 }
-.gd-section h1 {
+.gd-section h1,
+.gd-section h2,
+.gd-section h3 {
 	margin-bottom: 20px;
 }
 .gd-section p {
@@ -227,7 +217,7 @@ body #footer a { color: white; }
 .light-moss {
 	background: var(--snow);
 }
-h1.section-title {
+.section-title {
 	font-weight: bold;
 	font-size: 60px;
 	display: inline-block;
@@ -236,9 +226,9 @@ h1.section-title {
 	border-bottom-right-radius: 30px;
 	color: white;
 }
-h1.section-title.sun { background: var(--sun); }
-h1.section-title.grass { background: #39B54A; }
-h1.section-title.sky { background: var(--sky); }
+.section-title.sun { background: var(--sun); }
+.section-title.grass { background: #39B54A; }
+.section-title.sky { background: var(--sky); }
 
 .section-hero {
 	margin-bottom: 34px;
@@ -283,17 +273,16 @@ h1.section-title.sky { background: var(--sky); }
 
 .green-btn {
 	display: inline-block;
-	border-radius: 50px;
-	line-height: 50px;
-	font-size: 16px;
+	border-radius: 65px;
+	line-height: 65px;
+	font-size: 21px;
 	background: var(--evergreen);
 	color: white;
 	margin-top: 20px;
-	padding: 0 28px;
-	transition: 0.4s background;
+	padding: 0 36px;
+	transition: background 0.4s ease;
 	text-align: center;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	zoom: 130%;
 }
 .green-btn:hover,
 .green-btn:focus {
@@ -301,7 +290,7 @@ h1.section-title.sky { background: var(--sky); }
 	color: white;
 	text-decoration: none;
 }
-.fixed-width { width: 165px; }
+.fixed-width { width: 215px; }
 
 /* ====================================================
    Thermometers
@@ -506,7 +495,7 @@ h1.section-title.sky { background: var(--sky); }
 .gd-impact .impact-headline {
 	flex: 0 0 45%;
 }
-.gd-impact .impact-headline h1 {
+.gd-impact .impact-headline h2 {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-weight: 400;
 	font-size: 38px;
@@ -514,7 +503,7 @@ h1.section-title.sky { background: var(--sky); }
 	margin: 0;
 	color: #222;
 }
-.gd-impact .impact-headline h1 strong {
+.gd-impact .impact-headline h2 strong {
 	font-weight: bold;
 }
 .gd-impact .impact-blurb {
@@ -599,10 +588,13 @@ h1.section-title.sky { background: var(--sky); }
 	justify-content: center;
 	transition: background 0.2s;
 }
-.gd-impact .carousel-arrow:hover,
-.gd-impact .carousel-arrow:focus {
+.gd-impact .carousel-arrow:hover {
 	background: var(--fern);
-	outline: none;
+}
+.gd-impact .carousel-arrow:focus-visible {
+	background: var(--fern);
+	outline: 3px solid var(--moss);
+	outline-offset: 3px;
 }
 .gd-impact .carousel-arrow.prev { left: 14px; }
 .gd-impact .carousel-arrow.next { right: 14px; }
@@ -621,5 +613,11 @@ h1.section-title.sky { background: var(--sky); }
 
 @media (max-width: 650px) {
 	.gd-impact .carousel-slide { flex: 0 0 82%; }
-	.gd-impact .carousel-arrow { display: none; }
+	.gd-impact .carousel-arrow {
+		width: 36px;
+		height: 36px;
+		font-size: 20px;
+	}
+	.gd-impact .carousel-arrow.prev { left: 4px; }
+	.gd-impact .carousel-arrow.next { right: 4px; }
 }

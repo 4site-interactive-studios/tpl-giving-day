@@ -55,11 +55,17 @@
 	});
 })();
 
+(function initFooterYear() {
+	var el = document.getElementById("footer-year");
+	if (el) el.textContent = new Date().getFullYear();
+})();
+
 (function initImpactCarousel() {
 	var track = document.querySelector(".impact-carousel .carousel-track");
 	if (!track) return;
 	var prev = document.querySelector(".impact-carousel .carousel-arrow.prev");
 	var next = document.querySelector(".impact-carousel .carousel-arrow.next");
+
 	function scrollByOne(dir) {
 		var slide = track.querySelector(".carousel-slide");
 		if (!slide) return;
@@ -67,6 +73,16 @@
 		var step = slide.getBoundingClientRect().width + gap;
 		track.scrollBy({ left: dir * step, behavior: "smooth" });
 	}
+
 	if (prev) prev.addEventListener("click", function() { scrollByOne(-1); });
 	if (next) next.addEventListener("click", function() { scrollByOne(1); });
+
+	// Keyboard nav: arrow keys scrub the carousel when the track has focus.
+	track.setAttribute("tabindex", "0");
+	track.setAttribute("role", "region");
+	track.setAttribute("aria-label", "Impact stories carousel");
+	track.addEventListener("keydown", function(e) {
+		if (e.key === "ArrowRight") { e.preventDefault(); scrollByOne(1); }
+		else if (e.key === "ArrowLeft") { e.preventDefault(); scrollByOne(-1); }
+	});
 })();

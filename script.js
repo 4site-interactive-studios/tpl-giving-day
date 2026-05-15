@@ -66,6 +66,77 @@
 	var prev = document.querySelector(".impact-carousel .carousel-arrow.prev");
 	var next = document.querySelector(".impact-carousel .carousel-arrow.next");
 
+	var originals = Array.prototype.slice.call(track.querySelectorAll(".carousel-slide"));
+	var n = originals.length;
+	if (n <= 1) return;
+
+	// Clone the full slide set at both ends. DOM ends up as:
+	//   [c1..cN, r1..rN, c1..cN]
+	// Real slides occupy indices [n .. 2n-1]. Initial scroll lands on real slide 0.
+	originals.forEach(function(slide) {
+		var c = slide.cloneNode(true);
+		c.classList.add("carousel-clone");
+		c.setAttribute("aria-hidden", "true");
+		track.appendChild(c);
+	});
+	for (var i = n - 1; i >= 0; i--) {
+		var c = originals[i].cloneNode(true);
+		c.classList.add("carousel-clone");
+		c.setAttribute("aria-hidden", "true");
+		track.insertBefore(c, track.firstChild);
+	}
+
+	function scrollToIndex(idx, smooth) {
+		var slides = track.querySelectorAll(".carousel-slide");
+		if (!slides[idx]) return;
+		var trackRect = track.getBoundingClientRect();
+		var slideRect = slides[idx].getBoundingClientRect();
+		var pad = parseInt(getComputedStyle(track).paddingLeft, 10) || 0;
+		var target = track.scrollLeft + (slideRect.left - trackRect.left) - pad;
+		if (smooth) {
+			track.scrollTo({ left: target, behavior: "smooth" });
+		} else {
+			track.scrollLeft = target;
+		}
+	}
+
+	function leftmostSnappedIndex() {
+		var slides = track.querySelectorAll(".carousel-slide");
+		var trackRect = track.getBoundingClientRect();
+		var pad = parseInt(getComputedStyle(track).paddingLeft, 10) || 0;
+		var bestIdx = -1;
+		var bestDiff = Infinity;
+		for (var i = 0; i < slides.length; i++) {
+			var diff = Math.abs(slides[i].getBoundingClientRect().left - trackRect.left - pad);
+			if (diff < bestDiff) { bestDiff = diff; bestIdx = i; }
+		}
+		return bestIdx;
+	}
+
+	// Position on the first real slide once layout settles.
+	requestAnimationFrame(function() { scrollToIndex(n, false); });
+
+	// After a scroll settles, if we're sitting on a clone, silently jump to its real twin.
+	var resetting = false;
+	var settleTimer;
+	track.addEventListener("scroll", function() {
+		if (resetting) return;
+		clearTimeout(settleTimer);
+		settleTimer = setTimeout(function() {
+			var idx = leftmostSnappedIndex();
+			if (idx < 0) return;
+			if (idx < n) {
+				resetting = true;
+				scrollToIndex(idx + n, false);
+				requestAnimationFrame(function() { resetting = false; });
+			} else if (idx >= 2 * n) {
+				resetting = true;
+				scrollToIndex(idx - n, false);
+				requestAnimationFrame(function() { resetting = false; });
+			}
+		}, 150);
+	});
+
 	function scrollByOne(dir) {
 		var slide = track.querySelector(".carousel-slide");
 		if (!slide) return;
@@ -77,7 +148,6 @@
 	if (prev) prev.addEventListener("click", function() { scrollByOne(-1); });
 	if (next) next.addEventListener("click", function() { scrollByOne(1); });
 
-	// Keyboard nav: arrow keys scrub the carousel when the track has focus.
 	track.setAttribute("tabindex", "0");
 	track.setAttribute("role", "region");
 	track.setAttribute("aria-label", "Impact stories carousel");

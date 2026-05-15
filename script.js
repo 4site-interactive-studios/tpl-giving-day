@@ -54,3 +54,19 @@
 		rows[i].querySelector("td:nth-child(2)").textContent = "$" + commafy(d.amount);
 	});
 })();
+
+(function initImpactCarousel() {
+	var track = document.querySelector(".impact-carousel .carousel-track");
+	if (!track) return;
+	var prev = document.querySelector(".impact-carousel .carousel-arrow.prev");
+	var next = document.querySelector(".impact-carousel .carousel-arrow.next");
+	function scrollByOne(dir) {
+		var slide = track.querySelector(".carousel-slide");
+		if (!slide) return;
+		var gap = parseInt(getComputedStyle(track).gap, 10) || 0;
+		var step = slide.getBoundingClientRect().width + gap;
+		track.scrollBy({ left: dir * step, behavior: "smooth" });
+	}
+	if (prev) prev.addEventListener("click", function() { scrollByOne(-1); });
+	if (next) next.addEventListener("click", function() { scrollByOne(1); });
+})();

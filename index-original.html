@@ -1,0 +1,2225 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+<base href="https://secure3.convio.net/tpl/admin/PageBuilderPreviewPage?category=1&amp;pagename=Giving_Day_2025" />
+
+<title>
+
+Trust for Public Land
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta name="Keywords" content="Trust for Public Land, land conservation, parks for people, conservation benefits, conservation easements, conservation finance, GIS mapping, greenprinting, park benefits, wilderness protection, community forests, conservation economics, Center for City Park Excellence " />
+<meta name="Description" content="Trust for Public Land (TPL) is a national, nonprofit, land conservation organization that conserves land for people to enjoy as parks, community gardens, historic sites, wilderness, and other natural places, to ensure livable communities and a healthy environment." />
+<meta name="Robots" content="index, follow" />
+
+
+<script type="text/javascript">
+// feature toggle used for Timeout modal issue
+localStorage.setItem('useModalTimeoutToggle', 'false');
+</script>
+<input type="hidden" id="sessionTimeoutHdr" value="Session Timeout">
+<input type="hidden" id="sessionTimeoutGenMsg" value="Your session will expire soon unless you continue working.">
+<input type="hidden" id="sessionTimeoutMsgFirstPart" value="Your session will expire in">
+<input type="hidden" id="sessionTimeoutMsgSecondPart" value="unless you continue working.">
+<input type="hidden" id="sessionTimeoutLessThanMinMsg" value="less than one minute">
+<input type="hidden" id="minute" value="minute">
+<input type="hidden" id="minutes" value="minutes">
+<input type="hidden" id="sessionExpired" value="Your session expired at">
+<input type="hidden" id="continueWorking" value="Continue Working">
+<input type="hidden" id="logOut" value="Log Out">
+
+
+<script type="text/javascript">
+var keepAliveString = "keepAlive2('', 'https://secure.tpl.org/site/UserLogin;jsessionid=00000000.app30023c?NONCE_TOKEN=5404244266CA3AD27F60C36F2594CC62&amp;logout=logout&NEXTURL=https%3A%2F%2Fsecure3.convio.net%2Ftpl%2Fadmin%2FPageBuilderPreviewPage%3Fcategory%3D1%26amp%3Bpagename%3DGiving_Day_2025', '9699C6BA850FC57ABE167436BCA5406F.app30023c', 'jsessionid', '/site/', false, true, true)";
+var forceKeepAliveString = "forceKeepAlive2('')";
+function startTimeout() {
+setTimeout(function() {
+eval(keepAliveString);
+}, 480000);
+}
+function resetTimeout() {
+setTimeout(keepAliveString, 480000);
+}
+startTimeout();
+</script><noscript>&nbsp;</noscript>
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="https://secure3.convio.net/tpl/yui3/yui/yui-min.js"></script><noscript>&nbsp;</noscript>
+<script type="text/javascript" src="https://secure3.convio.net/tpl/js/convio/modules.js?version=2.9.3"></script><noscript>&nbsp;</noscript>
+<script type="text/javascript">
+var Y = YUI({base: 'https://secure3.convio.net/tpl/yui3/',
+insertBefore: 'yui_marker_loader_css', // insert all YUI module css before customstyle so it can be overridden
+debug: false, 
+modules: getModules('https://secure3.convio.net/tpl/', 'convio', true, true)});
+localStorage.setItem('useNewYUI', 'false');
+</script><noscript>&nbsp;</noscript>
+
+
+
+<script type="text/javascript" src="https://secure3.convio.net/tpl/js/utils.js"></script><noscript>&nbsp;</noscript>
+
+<script type="text/javascript" src="https://secure3.convio.net/tpl/js/obs_comp_rollup.js"></script><noscript>&nbsp;</noscript>
+
+
+<link href="https://secure3.convio.net/tpl/css/themes/default.css" rel="stylesheet" type="text/css" />
+<link href="https://secure3.convio.net/tpl/css/themes/alphacube.css" rel="stylesheet" type="text/css"/>
+
+
+<link href="https://secure3.convio.net/tpl/css/UserGlobalStyle.css" rel="stylesheet" type="text/css" />
+
+
+
+
+<link rel="stylesheet" type="text/css" id="yui_marker_loader_css" />
+<link href="https://secure3.convio.net/tpl/css/CustomStyle.css" rel="stylesheet" type="text/css" />
+<link href="https://secure3.convio.net/tpl/css/CustomWysiwygStyle.css" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+<meta name="CnvHeaderVersion" content="v5.0" />
+
+
+<!-- 2018 GTM Datalayer Page Component v1.9 -->
+<script type="text/javascript">
+function gqv(variable) {
+            var query = window.location.search.substring(1);
+            var vars = query.split("&");
+            for (var i = 0; i < vars.length; i++) {
+                var pair = vars[i].split("=");
+                if (pair[0] == variable) {
+                    return pair[1];
+                }
+            }
+            return (false);
+        }
+</script>
+
+
+
+<!-- form no 1 -->
+
+<script>
+var ConvioFormName = "dc:donationFormName";
+
+ window.dataLayer = window.dataLayer || []
+
+ // not a donation page, is an advocacy confirmation page
+ // update: not using this kind of confirmation page
+ // if (sessionStorage.getItem('advoID')){
+ //   dataLayer.push({
+ // 'ecommerce': {
+ //     'purchase': {
+ //       'actionField': {
+ //         'id': Math.floor(Math.random() * new Date()).toString(),    // Transaction ID
+ //         'revenue': 0.10               // Total value
+ //       },
+ //       'products': [{                            // List of productFieldObjects.
+ //         'name': sessionStorage.getItem('advoTitle'),     // Name  is required.
+ //         'id': sessionStorage.getItem('advoID'),
+ //         'brand' : 'Advocacy',
+ //          'category': 'advocacy',
+ //          'price': 0.10,
+ //          'currency': 'PLN',
+ //          'quantity': 1
+ //        }]
+ //        }
+ //   }
+ //   });
+ //   sessionStorage.clear()
+ // }
+
+
+// not a donation page, is an advocacy front page
+if ((/UserAction/.test(window.location.href)) && (/Advocacy/.test(window.location.href))){
+    dataLayer.push({
+  'ConvioFormId' : gqv('id'),
+  'ConvioFormName' : document.title,
+  'ecommerce': {
+      'detail': {
+        'products': [{
+          'name': document.title,         // Required - page title.
+          'id': gqv('id'),
+  'brand': 'Advocacy',
+'category': 'advocacy'
+         }]
+       }
+     }
+    });
+    sessionStorage.setItem('advoTitle',document.title);
+    sessionStorage.setItem('advoID',gqv('id'));
+}
+
+
+</script>
+
+
+ 
+
+ 
+
+<!-- completed no -->
+
+
+
+<!-- the rest -->
+<!-- End 2018 GTM Page Component v1.9 -->
+
+
+<!-- 2018 GTM Component v1.0 -->
+<script type="text/javascript">
+  (function(w, d, s, l, i) {
+    w[l] = w[l] || [];
+    w[l].push({
+      'gtm.start': new Date().getTime(),
+      event: 'gtm.js'
+    });
+    var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s),
+      dl = l != 'dataLayer' ? '&l=' + l : '';
+    j.async = true;
+    j.src =
+      '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+    f.parentNode.insertBefore(j, f);
+  })(window, document, 'script', 'dataLayer', 'GTM-T5THRD');
+</script>
+<!-- End 2018 GTM Component -->
+
+
+<!--ADVOCACY HEADER WITH STYLES-->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/ico" href="https://secure3.convio.net/tpl/assets/images/favicon.ico" />
+<link rel="stylesheet" type="text/css" media="screen" href="https://secure3.convio.net/tpl/assets/css/UserGlobalStyle-2022.css" />
+
+<link rel="stylesheet" type="text/css" media="screen" href="https://secure3.convio.net/tpl/assets/css/AdvocacyStyle-2022.css" />
+<!-- <link rel="stylesheet" type="text/css" media="screen" href="https://secure3.convio.net/tpl/assets/css/reset.css" /> -->
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+
+<link rel="stylesheet" type="text/css" media="screen" href="https://secure3.convio.net/tpl/assets/css/screen-2022.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="https://secure3.convio.net/tpl/assets/css/2022-update.css" />
+<!-- <link rel="stylesheet" type="text/css" media="screen" href="https://secure3.convio.net/tpl/assets/css/fonts.css" /> -->
+
+<link rel="stylesheet" type="text/css" media="screen" href="https://secure3.convio.net/tpl/assets/css/AdvoStyles2022.css" />
+
+
+
+<script type="text/javascript">
+  (document.querySelector("link[rel=stylesheet][href*='CustomStyle.css']") || {}).disabled = true;
+  (document.querySelector("link[rel=stylesheet][href*='AdvocacyStyle.css']") || {}).disabled = true;
+  (document.querySelector("link[rel=stylesheet][href*='UserGlobalStyle.css']") || {}).disabled = true;
+
+
+
+</script>
+
+<meta property="og:image" content="http://contacts.tpl.org/images/Thumbnails/ActionAlerts/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://secure3.convio.net/tpl/admin/PageBuilderPreviewPage?category=1&amp;pagename=Giving_Day_2025">
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@tpl_org" />
+<meta property="twitter:image" content="http://contacts.tpl.org/images/Thumbnails/ActionAlerts/">
+
+
+
+
+<style>
+/*call to fonts when testing */
+@font-face {
+  font-family: "Helvetica Neue";
+  font-weight: 300;
+  src: url("https://secure3.convio.net/tpl/assets/fonts/Helvetica_Neue_Light.woff") format("woff"), url("https://secure3.convio.net/tpl/assets/fonts/Helvetica_Neue_Light.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Helvetica Neue";
+  font-weight: 400;
+  src: url("https://secure3.convio.net/tpl/assets/fonts/Helvetica_Neue_Medium.woff") format("woff"), url("https://secure3.convio.net/tpl/assets/fonts/Helvetica_Neue_Medium.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Helvetica Neue";
+  font-weight: 500;
+  src: url("https://secure3.convio.net/tpl/assets/fonts/Helvetica_Neue_Roman.woff") format("woff"), url("https://secure3.convio.net/tpl/assets/fonts/Helvetica_Neue_Roman.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Helvetica Neue";
+  font-weight: bold;
+  src: url("https://secure3.convio.net/tpl/assets/fonts/Helvetica_Neue_Bold.woff") format("woff"), url("https://secure3.convio.net/tpl/assets/fonts/Helvetica_Neue_Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "PT Sans";
+  font-weight: 400;
+  src: url("https://secure3.convio.net/tpl/assets/fonts/pt-sans-v12-latin-regular.woff") format("woff"), url("https://secure3.convio.net/tpl/assets/fonts/pt-sans-v12-latin-regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "PT Sans";
+  font-weight: 400;
+  font-style: italic;
+  src: url("https://secure3.convio.net/tpl/assets/fonts/pt-sans-v12-latin-italic.woff") format("woff"), url("https://secure3.convio.net/tpl/assets/fonts/pt-sans-v12-latin-italic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "PT Sans";
+  font-weight: bold;
+  src: url("https://secure3.convio.net/tpl/assets/fonts/pt-sans-v12-latin-700.woff") format("woff"), url("https://secure3.convio.net/tpl/assets/fonts/pt-sans-v12-latin-700.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "PT Sans";
+  font-weight: bold;
+  font-style: italic;
+  src: url("https://secure3.convio.net/tpl/assets/fonts/pt-sans-v12-latin-700italic.woff") format("woff"), url("https://secure3.convio.net/tpl/assets/fonts/pt-sans-v12-latin-700italic.woff2") format("woff2");
+}
+</style>
+
+
+
+<!-- {{S51:wpr_advo_styles_2021}} -->
+<!--advocacy header-->
+
+ 
+
+		
+</head>
+<body
+
+
+
+
+
+
+
+
+
+
+
+
+class="mobile"
+>	
+<style>
+#action-alert .info-right-message-bottom #message {
+   background: white;
+   display: block;
+   width: 100%;
+}
+
+#info form input[type=text], 
+#info form textarea, 
+#info form select, 
+#action-alert.form #info input[type=text], 
+#action-alert.form #info textarea, 
+#action-alert.form #info select {
+    border: 0px solid #fff;
+    margin: 0px;
+}
+
+@media (min-width: 768px) {
+.container {
+    padding: 0px;
+}
+}
+</style>
+
+<div id="body" class=""> <!-- subepage -->
+    <div id="wrapHeader">
+        <div id="header">
+      <div class="header-top">
+  <div class="site-information">
+    <a href="https://tpl.org/" title="Home" rel="home" class="site-logo" id="site-logo--link"><img src="https://secure3.convio.net/tpl/assets/images/logos/tpl_primary-logo_earth_rgb.svg" alt="Home"></a>
+  </div>
+
+  <div class="header-right" role="secondary-navigation">
+    <div class="region region-header-right">
+      <div id="block-menu-menu-secondary-menu" class="block block-menu">
+        <div class="content">
+          <!-- <ul class="menu">
+            <li class="first leaf"><a href="http://tpl.org/our-impact" title="">Our Impact</a></li>
+            <li class="first leaf"><a href="http://tpl.org/services" title="">Services</a></li>
+            <li class="leaf"><a href="http://tpl.org/media-room" title="">Media Room</a></li>
+            <li class="leaf"><a href="http://tpl.org/magazine" title="">Magazine</a></li>
+            <li class="leaf"><a href="http://tpl.org/blog" title="">Blog</a></li>
+            <li class="last leaf"><a href="http://tpl.org/support" title="Support our work">Support Us</a></li>
+          </ul> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<div class="header-bottom">
+  <div class="site-navigation" role="primary-navigation">
+    <div class="region region-header">
+      <div id="block-system-main-menu" class="block block-system menu-header content block-menu">
+        <div class="content">
+          <!--<ul class="menu">
+            <li class="first leaf"><a href="http://tpl.org" title="" class="active">HOME</a></li>
+            <li class="leaf"><a href="http://tpl.org/our-work" title="">OUR WORK</a></li>
+            <li class="leaf"><a href="http://tpl.org/ourland" title="">OurLand</a></li>
+            <li class="leaf"><a href="http://tpl.org/about" title="">ABOUT</a></li>
+            <li class="last leaf"><a href="https://secure.tpl.org/site/Donation2?idb=673987454&amp;df_id=4281&amp;            4281.donation=form1" title="">DONATE</a></li>
+          </ul>-->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+	       <!-- #navigation -->
+        </div>
+        <!-- #header -->
+
+        <!-- STANDARD PAGE WRAPPER -->
+    </div>
+    <div id="wrapMain">
+        <div id="main">
+            <div id="contentFull">
+              <div class="container">
+                  <div class="row">
+                      <div class="col-sm-12">
+                          
+
+
+
+
+
+<!-- https://secure.tpl.org/site/SPageNavigator/Giving_Day_2025.html -->
+
+<!-- Place donation total so far here: -->
+
+
+<!-- Place donors here: -->
+
+
+
+
+
+
+<style>
+	
+	/* Cleanup wrapper styles: */
+	body
+	{
+		background: var(--earth);
+	}
+	body #header
+	{
+		width: auto;
+		max-width: 996px;
+	}
+	body #header .header-top
+	{
+		font-size: 0;
+	}
+	/*body #header .header-top .site-information,
+	body #header .header-top .header-right
+	{
+		display: inline-block;
+		width: 50%;
+		vertical-align: middle;
+	}*/
+	body #header .header-top .header-right
+	{
+		float: none;
+		padding-top: 0;
+	}
+	body #header .header-top .header-right .region-header-right
+	{
+		float: none;
+		text-align: right;
+	}
+	body #header .header-top .header-right .region-header-right #block-menu-menu-secondary-menu
+	{
+		float: none;
+		visibility: visible;
+	}
+	body #header .site-information a
+	{
+		margin-bottom: -6px;
+	}
+	body .advo_mo #wrapMain #main
+	{
+		width: auto !important;
+	}
+	body #wrapMain
+	{
+		padding-top: 40px;
+		padding-bottom: 0;
+	}
+	body #main
+	{
+		width: auto;
+		max-width: 996px;
+		background-color: transparent;
+	}
+	body #main #contentFull
+	{
+		min-height: none;
+		background-color: transparent;
+	}
+	body #main #contentFull .container
+	{
+		width: auto;
+		max-width: none;
+		padding-left: 0;
+		padding-right: 0;
+	}
+	body #main .container .col-sm-12
+	{
+		float: none;
+		padding: 0;
+		background-color: transparent;
+	}
+	body #footer
+	{
+		width: auto;
+		max-width: 980px;
+	}
+	@media only screen and (max-device-width: 767px), only screen and (max-width: 767px)
+	{
+		/*body #header .header-top .site-information
+		{
+			text-align: left;
+		}
+		body #header .header-top .site-information #site-logo--link img
+		{
+			height: 14vw;
+			width: auto;
+		}*/
+		body #footer .region-footer-right
+		{
+			margin-left: 0;
+		}
+	}
+	@media only screen and (max-device-width: 1023px), only screen and (max-width: 1023px)
+	{
+		body #wrapFooter #footer
+		{
+			width: 95%;
+		}
+	}
+	@media only screen and (max-device-width: 1050px), only screen and (max-width: 1050px)
+	{
+		body #header,
+		body #main
+		{
+			max-width: 90%;
+		}
+	}
+		
+	/* Hide FRU persistent donate button */
+	iframe[title="Persistent Donate Button"]
+	{
+		pointer-events: none;
+		opacity: 0;
+	}
+	
+	/* Style our page: */
+	.gd-section
+	{
+		background: white;
+		margin-bottom: 50px;
+		padding-bottom: 50px;
+	}
+	.gd-section h1
+	{
+		margin-bottom: 20px;
+	}
+	.gd-section p
+	{
+		font-size: 16px;
+		line-height: 22px;
+	}
+	.inset
+	{
+		padding: 30px 50px 0 50px;
+	}
+	.inset p
+	{
+		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	}
+	#gd-title .hero,
+	.section-hero
+	{
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+	#gd-title .hero.desktop-only
+	{
+		aspect-ratio: 1425/675;
+	}
+	#gd-title .hero.mobile-only
+	{
+		display: none;
+		aspect-ratio: 555/570;
+	}
+	#gd-title .inset
+	{
+		position: relative;
+		margin: -50px 50px 0px 50px;
+		padding: 50px 50px calc(50px - 1em) 50px;
+	}
+	#gd-title .inset h1
+	{
+		margin-top: 0;
+	}
+	#gd-title .inset h1 strong
+	{
+		display: block;
+	}
+	.light-moss
+	{
+		background: #F5FAF1;		
+	}
+	h1.section-title
+	{
+		font-weight: bold;
+		font-size: 60px;
+		display: inline-block;
+		margin: 0;
+		padding: 16px 40px 6px 50px;
+		border-bottom-right-radius: 30px;
+		color: white;
+	}
+	h1.section-title.sun
+	{
+		background: var(--sun);
+	}
+	h1.section-title.grass
+	{
+		background: #39B54A;
+	}
+	h1.section-title.sky
+	{
+		background: var(--sky);
+	}
+	.section-hero
+	{
+		margin-bottom: 34px;
+	}
+	.two-col
+	{
+		display: flex;
+		margin-top: 40px;
+	}
+	.two-col > *
+	{
+		flex: 0 0 50%;
+	}
+	.two-col #section-image
+	{
+		width: 100%;
+		height: auto;
+		display: block;
+		padding-right: 50px;
+		object-fit: contain;
+		object-position: top;
+		min-width: 0;
+	}
+	.two-col #donor-table
+	{
+		margin-top: -5px;
+	}
+	.two-col #most-recent
+	{
+		width: calc(100% - 50px);
+	}
+	.two-col #most-recent tr:first-of-type td
+	{
+		border-top: 1px solid #D9D9D9;
+	}
+	.two-col #most-recent td
+	{
+		border-bottom: 1px solid #D9D9D9;
+		font-size: 14px;		
+	}
+	.two-col #most-recent td:first-of-type
+	{
+		border-left: 1px solid #D9D9D9;
+		padding: 10px 0 10px 20px;
+	}
+	.two-col #most-recent td:last-of-type
+	{
+		border-right: 1px solid #D9D9D9;
+		width: 70px;
+	}
+	.green-btn
+	{
+		display: inline-block;
+		border-radius: 50px;
+		line-height: 50px;
+		font-size: 16px;
+		background: var(--evergreen);
+		color: white;
+		margin-top: 20px;
+		transition: 0.4s background;
+		text-align: center;
+		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+		zoom: 130%;
+	}
+	.green-btn:hover,
+	.green-btn:focus
+	{
+		background: var(--fern);
+		color: white;
+		text-decoration: none;
+	}
+	.fixed-width
+	{
+		width: 165px;
+	}
+	.therm
+	{
+		display: block;
+		margin-top: -50px;
+		text-align: right;
+		padding-left: 50px;
+		padding-right: 50px;
+	}
+	.therm-box
+	{
+		display: inline-block;
+		max-width: 560px;
+		width: 100%;
+		height: 54px;
+		padding-top: 14px;
+		padding-bottom: 14px;
+		padding-right: 36px; /* room for icon */
+		background: var(--moss);
+	}
+	.therm-fill
+	{
+		position: relative;
+		width: 0%; /* populate with JS */
+		min-width: 12px;
+		height: 27px;
+		background: linear-gradient(to bottom, var(--sun) 0%, var(--sun) 33%, var(--grass) 33%, var(--grass) 66%, var(--sky) 66%, var(--sky) 100%);
+		transition: 4.2s width;
+		transition-timing-function: linear;
+	}
+	.therm-fill::after
+	{
+		display: block;
+		position: absolute;
+		content: "";
+		top: -13px;
+		left: calc(100% - 14px);
+		width: 51px;
+		height: 51px;
+		background-size: contain;
+	}
+	#therm-give-fill::after
+	{
+		background-image: url(https://secure3.convio.net/tpl/images/content/pagebuilder/givingday-give-thermometer.png);
+	}
+	#therm-act-fill::after
+	{
+		background-image: url(https://secure3.convio.net/tpl/images/content/pagebuilder/givingday-act-thermometer.png);
+	}
+	#therm-pledge-fill::after
+	{
+		left: calc(100% - 13px);
+		width: 50px;
+		background-image: url(https://secure3.convio.net/tpl/images/content/pagebuilder/givingday-pledge-thermometer.png);
+	}
+	.therm-number
+	{
+		padding-top: 8px;
+		font-weight: bold;
+		font-size: 24px;
+		line-height: 29px;
+		text-align: right;
+		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	}
+	
+	/* Define the keyframe animation for fading in */
+	@keyframes fadeIn
+	{
+		from
+		{
+			opacity: 0;
+			transform: translateY(20px); /* slide up slightly */
+		}
+		to
+		{
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+	/* Hide all table rows initially except the header */
+	#most-recent tr
+	{
+		opacity: 0;
+		animation-fill-mode: forwards; /* Keep the final state of the animation */
+	}
+	/* Apply the animation with a staggered delay to each row */
+	#most-recent tr:nth-child(1)
+	{
+		animation: fadeIn 0.5s ease-out 1.0s forwards;
+	}
+	#most-recent tr:nth-child(2)
+	{
+		animation: fadeIn 0.5s ease-out 1.4s forwards;
+	}
+	#most-recent tr:nth-child(3)
+	{
+		animation: fadeIn 0.5s ease-out 1.8s forwards;
+	}
+	#most-recent tr:nth-child(4)
+	{
+		animation: fadeIn 0.5s ease-out 2.2s forwards;
+	}
+	#most-recent tr:nth-child(5)
+	{
+		animation: fadeIn 0.5s ease-out 2.6s forwards;
+	}	
+	
+	@media only screen and (max-device-width: 960px), only screen and (max-width: 960px)
+	{
+		.therm
+		{
+			margin-top: 40px;
+			margin-bottom: -22px;
+		}
+		.therm-box
+		{
+			max-width: 100%;
+		}
+	}
+	
+	@media only screen and (max-device-width: 650px), only screen and (max-width: 650px)
+	{
+		.inset
+		{
+			padding: 34px 20px;
+		}
+		#gd-title .hero.mobile-only
+		{
+			display: block;
+			aspect-ratio: ;
+		}
+		#gd-title .hero.desktop-only
+		{
+			display: none;
+		}
+		#gd-title .inset
+		{
+			margin-top: -60px;
+			margin-left: 20px;
+			margin-right: 20px;
+			padding: 34px 20px calc(34px - 1em) 20px;
+		}
+		#gd-title .inset h1 strong
+		{
+			display: inline;
+		}
+		.two-col
+		{
+			display: flex;
+			flex-direction: column;
+			margin-top: 10px;
+		}
+		.two-col > *
+		{
+			flex: 1;
+		}
+		.two-col #most-recent
+		{
+			width: 100%;
+		}
+		.two-col #donor-table
+		{
+			margin-top: 40px;
+			margin-left: 20px;
+			margin-right: 20px;
+		}
+		#gd-act.gd-section,
+		#gd-pledge.gd-section
+		{
+			padding-bottom: 10px;
+		}
+		#gd-act .section-hero,
+		#gd-pledge .section-hero
+		{
+			height: 320px;
+			object-fit: cover;
+		}
+		#gd-act .section-hero
+		{
+			object-position: 53%;
+		}
+		#gd-pledge .section-hero
+		{
+			object-position: 52%;
+		}
+		.therm
+		{
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+	}
+	
+</style>
+
+<section class="gd-section" id="gd-title">
+	<a href="?form=FUNYMHPQUNH">
+		<img class="hero desktop-only" src="https://secure3.convio.net/tpl/images/content/pagebuilder/givingday-hero-desktop.jpg" alt="Giving Day" aria-hidden="true">
+		<img class="hero mobile-only" src="https://secure3.convio.net/tpl/images/content/pagebuilder/givingday-hero-mobile.jpg" alt="Giving Day" aria-hidden="true">
+	</a>
+	<div class="inset light-moss">
+		<h1><strong>Trust for Public Land Giving Day:</strong> Saturday, September 27!</h1>
+		<p>
+			National Public Lands Day is a chance for us all to come together as supporters and protectors of our public lands. Right now, we're seeing efforts by special interests and elected officials to endanger the survival of these precious spaces. If we want to protect our national parks, forests, and other public lands for future generations, we must stand up and speak out for them. 
+		</p>
+		<p>
+			So, whether you Give, Act, Pledge (or all three!), together we're building a future where everyone has access to the outdoors and nature continues to be a source of strength, joy, and belonging for all.
+		</p>
+	</div>
+</section>
+<section class="gd-section" id="gd-give">
+	<h1 class="section-title sun">Give</h1>
+	<div class="therm" id="therm-give">
+		<div class="therm-box">
+			<div class="therm-fill" id="therm-give-fill">
+			</div>
+		</div>
+		<div class="therm-number" id="therm-give-number">
+			&nbsp; <!-- populated by js -->
+		</div>
+	</div>
+	<div class="inset">
+		<h1><strong>Donate now</strong> and your gift will be matched 5x</h1>
+		<p>
+			Saturday, September 27 is National Public Lands Day. It's also Trust for Public Land's inaugural Giving Day!
+		</p>
+		<p>
+			This is one big day when we do every single thing we can to expand access to the outdoors, protect the places that shape our shared history, and ensure every person&mdash;regardless of zip code&mdash;can experience the power of nature.
+		</p>
+		<p>
+			We are coming together like never before to raise $100,000 to show our support for our outdoor shared spaces and public lands. 
+		</p>
+		<p>
+			This is the best time to give. In fact, giving today is the very best way you can help protect our treasured public lands now and for generations to come. 
+		</p>
+		<p>
+			<strong>Be a part of it with a 5x matched gift now, thanks to our partners at Altra! And, if you make a gift of $70 or more, we'll send you a special TPL tote bag as a thank you!</strong>
+		</p>
+		<a href="?form=FUNYMHPQUNH" class="green-btn fixed-width">Give Now</a>
+	</div>
+	<div class="two-col">
+		<img id="section-image" src="https://secure3.convio.net/tpl/images/content/pagebuilder/givingday-give-photo.png" alt="Give" aria-hidden="true">
+		<div id="donor-table">
+			<strong>Most recent donations:</strong>
+			<table id="most-recent">
+				<tr>
+					<td>
+						<!-- Firstname A., <em>State</em> -->
+					</td>
+					<td>
+						<!-- $15 -->
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<!-- Firstname B., <em>State</em> -->
+					</td>
+					<td>
+						<!-- $15 -->
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<!-- Firstname C., <em>State</em> -->
+					</td>
+					<td>
+						<!-- $15 -->
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<!-- Firstname D., <em>State</em> -->
+					</td>
+					<td>
+						<!-- $15 -->
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<!-- Firstname E., <em>State</em> -->
+					</td>
+					<td>
+						<!-- $15 -->
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</section>
+<section class="gd-section" id="gd-act">
+	<h1 class="section-title grass">Act</h1>
+	<div class="therm" id="therm-act">
+		<div class="therm-box">
+			<div class="therm-fill" id="therm-act-fill">
+			</div>
+		</div>
+		<div class="therm-number" id="therm-act-number">
+			&nbsp; <!-- populated by js -->
+		</div>
+	</div>
+	<div class="inset">
+		<img class="section-hero" src="https://secure3.convio.net/tpl/images/content/pagebuilder/givingday-act-photo.jpg" alt="Act" aria-hidden="true">
+		<h1><strong>Tell Congress:</strong> Keep Public Lands in Public Hands</h1>
+		<p>
+			Right now, special interests are pushing to strip protections from our parks, trails, and open spaces&mdash;opening the door to development and closing access for future generations. Without strong protections, access to these spaces could disappear.
+		</p>
+		<p>
+			Congress is considering the bipartisan Public Lands in Public Hands Act, which would prevent the sale or transfer of most federal public lands and ensure they remain open for all. We need your voice.
+		</p>
+		<p>
+			<strong>Take one minute now to keep public lands in public hands by signing the petition, and urging Congress to protect our beloved green spaces!</strong>
+		</p>
+		<a href="https://secure.tpl.org/site/Advocacy?cmd=display&page=UserAction&id=2189" target="_blank" class="green-btn fixed-width">Act Now</a>
+	</div>
+</section>
+<section class="gd-section" id="gd-pledge">
+	<h1 class="section-title sky">Pledge</h1>
+	<div class="therm" id="therm-pledge">
+		<div class="therm-box">
+			<div class="therm-fill" id="therm-pledge-fill">
+			</div>
+		</div>
+		<div class="therm-number" id="therm-pledge-number">
+			&nbsp; <!-- populated by js -->
+		</div>
+	</div>
+	<div class="inset">
+		<img class="section-hero" src="https://secure3.convio.net/tpl/images/content/pagebuilder/givingday-pledge-photo.jpg" alt="Pledge" aria-hidden="true">
+		<h1><strong>Get outside!</strong> That's right, we want <em>you</em> to pledge to get outdoors!</h1>
+		<p>
+			The challenges facing our parks and public lands are real&mdash;and growing. In times of uncertainty, our values guide us. This moment requires our full attention and collective action so that everyone has access to the outdoors and nature continues to be a source of strength, joy, and belonging for all.
+		</p>
+		<p>
+			We know that green spaces have the power to heal&mdash;lowering stress and easing anxiety. That's why, one of the most powerful ways you can stand with Trust for Public Land is also the simplest: step outside! 
+		</p>
+		<p>
+			Whether it's a quick walk to your local park or a last-minute getaway to a National Park you've never visited, we hope you can celebrate our first giving day by visiting your public lands. 
+		</p>
+		<p>
+			<strong>Will you be one of the 8,000 people who pledge to get outdoors? Sign the pledge now, then get out there and touch some grass!</strong>
+		</p>
+		<a href="https://secure.tpl.org/site/Advocacy?cmd=display&page=UserAction&id=2185" target="_blank" class="green-btn fixed-width">Pledge Time</a>
+	</div>
+</section>
+
+<script>
+	
+	// Add commas to a number. Credits to Steven Levithan (http://blog.stevenlevithan.com/archives/commafy-numbers)
+	String.prototype.commafy = function()
+	{
+		return this.replace(/(^|[^\w.])(\d{4,})/g, function($0, $1, $2)
+		{
+			return $1 + $2.replace(/\d(?=(?:\d\d\d)+(?!\d))/g, "$&,");
+		});
+	}
+	Number.prototype.commafy = function()
+	{
+		return String(this).commafy();
+	}
+	
+	// Compute new goals as they're reached
+	function getGoalTotal(currentCount)
+	{
+		if (currentCount < 100)
+			return 100;
+		else if (currentCount < 250)
+			return 250;
+		else if (currentCount < 500)
+			return 500;
+		else if (currentCount < 2500)
+			return Math.ceil((currentCount + 1) / 500) * 500; // take amount + 1, round up to nearest 500
+		else if (currentCount < 5000)
+			return Math.ceil((currentCount + 1) / 1000) * 1000;
+		else
+			return Math.ceil((currentCount + 1) / 5000) * 5000;
+	}
+	
+	// Function will slowly update thermometer to goal number
+	function updateThermometer(count, goal, fillElm, numberElm, prefix)
+	{
+		var currentCount = count;
+		var goalCount = goal;
+		var shownCount = 0;
+		
+		let bgPositionPercentage = Math.min(parseInt(currentCount / goalCount * 100), 100);
+		fillElm.style.width = bgPositionPercentage + "%";
+		
+		var updatingThermometerInterval = window.setInterval(function()
+		{
+			shownCount = Math.min(currentCount, shownCount + Math.ceil(currentCount / 80));
+			
+			numberElm.innerHTML = prefix + shownCount.commafy() + " of " + prefix + goalCount.commafy() + " goal";
+			
+			if (shownCount >= currentCount)
+			{
+				window.clearInterval(updatingThermometerInterval);
+			}
+		}, 50);
+	}
+	
+	// Donor Table:
+	var parseDonorStrings = function(row, str)
+	{
+		let strArray = str.replace(",", "$").split("$", 3);
+		row.querySelector("td:nth-child(1)").innerHTML = strArray[0] + ", <em>" + strArray[1] + "</em>";
+		row.querySelector("td:nth-child(2)").innerHTML = "$" + strArray[2].commafy();
+	};
+	parseDonorStrings(document.querySelector("#most-recent tr:nth-child(1)"), "Rob P., MA $128");
+	parseDonorStrings(document.querySelector("#most-recent tr:nth-child(2)"), "Nicole L., MI $213");
+	parseDonorStrings(document.querySelector("#most-recent tr:nth-child(3)"), "Cynthia M., TN $213");
+	parseDonorStrings(document.querySelector("#most-recent tr:nth-child(4)"), "Bonita S., MN $16");
+	parseDonorStrings(document.querySelector("#most-recent tr:nth-child(5)"), "Henry N., CO $27");
+	
+	// Give:
+	document.addEventListener("DOMContentLoaded", function()
+	{
+		var donationAmountCurrent = parseInt(String("75,590").replace("$", "").replace(",", ""));
+		
+		// With fixed goal:
+		updateThermometer(donationAmountCurrent, 100000, document.getElementById("therm-give-fill"), document.getElementById("therm-give-number"), "$");
+		
+		// With auto-updating goals:
+		//updateThermometer(donationAmountCurrent, getGoalTotal(donationAmountCurrent), document.getElementById("therm-give-fill"), document.getElementById("therm-give-number"), "$");
+	});
+	
+	// Act:
+	//YUI().use('io-base', 'json-parse', 'node', function(Y)
+	//{
+	//	var countOffset = 0;
+	//	var alertId = "2189";  // real is 2189, testing 2169
+	//
+	//	Y.on('io:complete', function(id, o)
+	//	{
+	//		//console.log("action response", o.responseText);
+	//		
+	//		var count = parseInt(Y.JSON.parse(o.responseText).getAdvocacyAlertResponse.alert.interactionCount, 10) + countOffset;
+	//		
+	//		// With fixed goal:
+	//		updateThermometer(count, 5000, document.getElementById("therm-act-fill"), document.getElementById("therm-act-number"), "");
+	//
+	//		// With auto-updating goals:
+	//		//updateThermometer(count, getGoalTotal(count), document.getElementById("therm-act-fill"), document.getElementById("therm-act-number"), "");
+	//	}, Y);
+	//	var request = Y.io('CRAdvocacyAPI?method=getAdvocacyAlert&api_key=' + '7827782778' + '&v=1.0&response_format=json&suppress_response_codes=true&alert_id=' + alertId + '&alert_type=action');
+	//});
+	
+	// Act with multiple forms:
+	window.multipleAlerts = [2179,2187,2193,2195,2196,2197,2198,2189];
+	window.alertCount = 0;
+	
+	// Function to tally alerts from window.multipleAlerts:
+	// if any alerts remain in array:
+	//  pops off alert, gets tally, onCompleteGetAlertTally, adds tally to total, recursively calls getAlertTally
+	// else, calls the show thermometer function
+	function getAlertTally()
+	{
+		// if any alerts remain to get tally for:
+		if (window.multipleAlerts.length > 0)
+		{
+			YUI().use('io-base', 'json-parse', 'node', function(Y)
+			{
+				var alertId = window.multipleAlerts.pop();
+				
+				// Called when tally comes back. Will be called multiple times if we're getting the count for multiple alerts
+				var onCompleteGetAlertTally = function(id, o)
+				{
+					try
+					{
+						// Get signatures count, compute progress:
+						window.alertCount += parseInt(Y.JSON.parse(o.responseText).getAdvocacyAlertResponse.alert.interactionCount, 10);
+					} catch (e) { }
+					
+					// Call it again
+					getAlertTally();
+				}
+				
+				Y.on('io:complete', onCompleteGetAlertTally, Y);
+				
+				var request = Y.io('CRAdvocacyAPI?method=getAdvocacyAlert&api_key=' + '7827782778' + '&v=1.0&response_format=json&suppress_response_codes=true&alert_id=' + alertId + '&alert_type=action');
+			});
+		}
+		else
+		{
+			// Done tallying, using fixed goal:
+			updateThermometer(window.alertCount, 5000, document.getElementById("therm-act-fill"), document.getElementById("therm-act-number"), "");
+		}
+	}
+	getAlertTally();
+	
+	// Pledge:
+	YUI().use('io-base', 'json-parse', 'node', function(Y)
+	{
+		var countOffset = 0;
+		var alertId = "2185";  // real is 2185, testing 2183
+	
+		Y.on('io:complete', function(id, o)
+		{
+			//console.log("pledge response", o.responseText);
+			
+			var count = parseInt(Y.JSON.parse(o.responseText).getAdvocacyAlertResponse.alert.interactionCount, 10) + countOffset;
+			
+			// With fixed goal:
+			updateThermometer(count, 150, document.getElementById("therm-pledge-fill"), document.getElementById("therm-pledge-number"), "");
+			
+			// With auto-updating goals:
+			//updateThermometer(count, getGoalTotal(count), document.getElementById("therm-pledge-fill"), document.getElementById("therm-pledge-number"), "");
+		}, Y);
+		var request = Y.io('CRAdvocacyAPI?method=getAdvocacyAlert&api_key=' + '7827782778' + '&v=1.0&response_format=json&suppress_response_codes=true&alert_id=' + alertId + '&alert_type=action');
+	});
+	
+</script>
+
+<!-- Fundraise Up: the new standard for online giving -->
+<script>(function(w,d,s,n,a){if(!w[n]){var l='call,catch,on,once,set,then,track,openCheckout'
+.split(','),i,o=function(n){return'function'==typeof n?o.l.push([arguments])&&o
+:function(){return o.l.push([n,arguments])&&o}},t=d.getElementsByTagName(s)[0],
+j=d.createElement(s);j.async=!0;j.src='https://cdn.fundraiseup.com/widget/'+a+'';
+t.parentNode.insertBefore(j,t);o.s=Date.now();o.v=5;o.h=w.location.href;o.l=[];
+for(i=0;i<8;i++)o[l[i]]=o(l[i]);w[n]=o}
+})(window,document,'script','FundraiseUp','AMAYNAQU');</script>
+<!-- End Fundraise Up -->
+
+
+                      </div>
+                  </div>
+              </div>
+            </div><!--CONTENTFULL END-->
+        </div><!--MAIN END-->
+        <script>
+/* wrapper update */
+function inithandler(){
+  if(document.getElementById('newhandle')){
+    document.getElementById('newhandle').style.width = "1.25em";
+    document.getElementById('newhandle').style.height = "1.5em";
+    document.getElementById('newhandle').style.lineHeight = "1.em";
+    document.getElementById('newhandle').addEventListener('click',newsliders,false);
+    newsliders("hide");
+    newheader();
+    fixfoot();
+    if(gqv('log')=="out"){
+      clearfields();
+    } else {
+      helloboxing();
+    }
+    layoutedits();
+    // stateZipOrg();
+    // textareamove("middle");
+    textareagrow("middle");
+    listentothefields();
+    formContent();
+    if (typeof goal !== 'undefined') {
+      if(goal !== undefined && goal !== null) {
+        var goal1 = parseFloat(goal.replace(/,/g, ''));
+        addprogressbar(goal1);
+      }
+    }
+    return true;
+  } else {
+    setTimeout(function(){
+      inithandler();
+    },50);
+  }
+}
+
+function tyhandler(){ // email
+  if(document.getElementById('taf_send')){
+    if(document.getElementById('newhandle')){
+      document.getElementById('newhandle').style.width = "1.25em";
+      document.getElementById('newhandle').style.height = "1.5em";
+      document.getElementById('newhandle').style.lineHeight = "1.em";
+      document.getElementById('newhandle').addEventListener('click',newsliders,false);
+      if(localStorage.getItem('advoID')){
+        if(gqv('id')==localStorage.getItem('advoID')){
+          if(localStorage.getItem('advonav')){
+            lowdistraction = localStorage.getItem('advonav');
+          }
+        }
+      }
+      newsliders("hide");
+      newheader();
+      fixfoot();
+      fixfieldsty();
+      document.getElementById('body').classList.add('advo_ty');
+      document.getElementById('wrapFooter').classList.add('advo_ty');
+      document.querySelectorAll('#action-alert form table')[0].id = "tyform";
+      return true;
+    } else {
+      setTimeout(function(){
+        tyhandler();
+      },50);
+    }
+  }
+  return true;
+}
+
+//1236x538
+
+function taflist(){
+  if(document.getElementById('newhandle')){
+    document.getElementById('newhandle').style.width = "1.25em";
+    document.getElementById('newhandle').style.height = "1.5em";
+    document.getElementById('newhandle').style.lineHeight = "1.em";
+    document.getElementById('newhandle').addEventListener('click',newsliders,false);
+    if(localStorage.getItem('advoID')){
+        if(localStorage.getItem('advonav')){
+          lowdistraction = localStorage.getItem('advonav');
+        }
+    }
+    newsliders("hide");
+    newheader();
+    fixfoot();
+    document.getElementById('body').classList.add('advo_tafly');
+    document.getElementById('wrapFooter').classList.add('advo_tafly');
+    return true;
+  } else {
+    setTimeout(function(){
+      taflist();
+    },50);
+  }
+return true;
+}
+
+
+function tyfbhandler(){
+  if(document.getElementById('newhandle')){
+    document.getElementById('newhandle').style.width = "1.25em";
+    document.getElementById('newhandle').style.height = "1.5em";
+    document.getElementById('newhandle').style.lineHeight = "1.em";
+    document.getElementById('newhandle').addEventListener('click',newsliders,false);
+    lowdistraction = false;
+    if(localStorage.getItem('advoID')){
+        if(localStorage.getItem('advonav')){
+          lowdistraction = localStorage.getItem('advonav');
+        }
+    }
+    var lowdistgqv = gqv('minimalNav');
+    if(lowdistgqv == "true"||lowdistgqv == true){
+      lowdistraction = true;
+    }
+    if(lowdistgqv == "false"||lowdistgqv == false){
+      lowdistraction = false;
+    }
+    setTimeout(function(){
+    newsliders("hide");
+    newheader();
+    fixfoot();
+    facebookshare();
+    document.getElementById('body').classList.add('advo_tyfb');
+    document.getElementById('wrapFooter').classList.add('advo_tyfb');
+  },10);
+    return true;
+  } else {
+    setTimeout(function(){
+      tyfbhandler();
+    },50);
+  }
+return true;
+}
+
+function newsliders(a){
+  var a = a;
+  if(a=="hide"){
+    var currently = "-";
+  } else {
+    var currently = document.getElementById('newhandle').innerHTML;
+  }
+    if(currently.indexOf('+')>-1){
+      document.getElementById('newhandle').innerHTML = "-";
+      document.getElementById('newsliders').style.display = "block";
+    } else {
+      document.getElementById('newhandle').innerHTML = "+";
+      document.getElementById('newsliders').style.display = "none";
+    }
+}
+
+function fixfieldsty(){
+  if(document.querySelectorAll('label[for=taf_captcha]')[0]){
+    //document.querySelectorAll('label[for=taf_captcha]')[0].parentNode.parentNode.parentNode.style.display = "none";
+    for(var x=0;x<document.querySelectorAll('label[for=taf_captcha]')[0].parentNode.parentNode.parentNode.children.length;x+=1){
+      document.querySelectorAll('label[for=taf_captcha]')[0].parentNode.parentNode.parentNode.children[x].style.display = "none";
+    }
+  }
+  if(document.getElementById('taf_send')){
+    var removethese = ['size','cols','rows','maxlength'];
+    var fromthese = ['taf_send','taf_subj','taf_msg'];
+    fromthese.forEach(function(fromthis){
+      removethese.forEach(function(removethis){
+        document.getElementById(fromthis).removeAttribute(removethis);
+      });
+    });
+  }
+  if(document.querySelectorAll('.bottom')[0]){
+    document.querySelectorAll('.bottom')[0].style.width = "100%";
+  }
+  return true;
+}
+
+function textareamove(a){
+  var a = a;
+  var go = false;
+  if(document.getElementById('survey-questions')){
+    if(document.getElementById(a)){
+      go = true;
+      var theElement = document.getElementById(a).parentNode.parentNode;
+      var parentDiv = document.getElementById('survey-questions').parentNode;
+      parentDiv.insertBefore(theElement, document.getElementById('survey-questions'));
+    } else {
+      go = false;
+    }
+  } else {
+    if(go==false){
+      setTimeout(function(){textareamove(a)},100);
+    } else {
+      return true;
+    }
+  }
+}
+
+function clearfields(){
+  var thesego = []
+  if(document.querySelectorAll('.label-field-wrap div input')){
+   thesego.push(document.querySelectorAll('.label-field-wrap div input'));
+ }
+ if(document.querySelectorAll('.label-field-wrap div select')){
+   thesego.push(document.querySelectorAll('.label-field-wrap div select'));
+ }
+ if(document.querySelectorAll('.label-field-wrap div textarea')){
+   thesego.push(document.querySelectorAll('.label-field-wrap div textarea'));
+ }
+   for(var x=0;x<thesego.length;x+=1){
+     for(var y=0;y<thesego[x].length;y+=1){
+       thesego[x][y].value = null;
+     }
+   }
+   return true;
+}
+
+function textareagrow(a){
+  var a = a;
+  if(document.querySelectorAll('textarea')){
+    if(document.getElementById(a)){
+      document.getElementById(a).setAttribute("onfocus","textareavala('"+a+"')");
+      document.getElementById(a).setAttribute("onblur","textareavalb('"+a+"')");
+      if(gqv('id')){
+        var advo_msg = document.getElementById(a).value;
+        if (typeof(sessionStorage) !='undefined'){
+          if (sessionStorage.getItem("advo_msg") === null) {
+            sessionStorage.setItem('advo_msg',advo_msg);
+          }
+        } else {
+          // no sessionstorage, not worth cookie fallback as it's 2018
+          // 'A personal message can make a big difference on this issue. Please add one here.'
+        }
+      }
+      document.getElementById(a).setAttribute('rows',5);
+      if(document.querySelectorAll('.ErrorMessage')[0]){
+        if(document.getElementById(a).value == sessionStorage.getItem('advo_msg')){
+          var current = document.getElementById(a).value;
+          document.getElementById(a).style.color = "#777";
+          document.getElementById(a).setAttribute('placeholder',current);
+        }
+        if(document.getElementById(a).value == 'Thank you'){
+          document.getElementById(a).value = sessionStorage.getItem('advo_msg');
+          var current = document.getElementById(a).value;
+          document.getElementById(a).style.color = "#777";
+          document.getElementById(a).setAttribute('placeholder',current);
+        }
+        // onsubmit takeover
+        document.getElementById('beanForm').setAttribute("onsubmit","return submitCheckPreSubmission('"+a+"')");
+      } else {
+          document.getElementById(a).style.color = "#444";
+          if(document.getElementById(a).value == 'Thank you'){
+            document.getElementById(a).value = sessionStorage.getItem('advo_msg');
+          }
+          if(document.getElementById(a).value == sessionStorage.getItem('advo_msg')){
+            document.getElementById(a).style.color = "#777";
+          }
+          var current = document.getElementById(a).value;
+          document.getElementById(a).setAttribute('placeholder',current);
+        // onsubmit takeover
+        document.getElementById('beanForm').setAttribute("onsubmit","return submitCheckPreSubmission('"+a+"')");
+      }
+    }
+  } else {
+    setTimeout(function(){textareagrow(a)},100);
+  }
+  return true;
+}
+
+function submitCheckPreSubmission(a){
+  var a = a;
+  var curval = document.getElementById(a).value;
+  var plaval = document.getElementById(a).placeholder;
+    if(document.getElementById(a).value == ""){
+      document.getElementById(a).style.color = "#fff";
+      document.getElementById(a).value = "Thank you";
+    } else {
+      if(curval == plaval){
+        document.getElementById(a).style.color = "#fff";
+        document.getElementById(a).value = "Thank you";
+      }
+    }
+    var submitted = submitCheckSubmission();
+    if(submitted=="true"||submitted==true){
+      return true;
+    } else {
+      return false;
+    }
+}
+
+function textareavala(a){
+  var a = a;
+  if(document.querySelectorAll('textarea')){
+    if(document.getElementById(a)){
+      if(document.getElementById(a).value !== ""){
+        var current = document.getElementById(a).value;
+        var placeho = document.getElementById(a).placeholder;
+        if(placeho == current){
+          document.getElementById(a).value = "";
+        }
+      }
+    }
+  }
+}
+
+function textareavalb(a){
+  var a = a;
+  if(document.querySelectorAll('textarea')){
+    if(document.getElementById(a)){
+      if(document.getElementById(a).value == ""){
+        var placeho = document.getElementById(a).placeholder;
+        if(placeho!==""){
+          var current = document.getElementById(a).value = placeho;
+          document.getElementById(a).style.color = "#777";
+        }
+      } else {
+          document.getElementById(a).style.color = "#444";
+        }
+      }
+    }
+  }
+
+if(gqv('page')=="UserAction"){
+  try {
+    inithandler();
+  } catch(e) {
+    console.log(e);
+  }
+  localStorage.setItem('advoID',gqv('id'));
+  if(document.getElementById('new_facebook_share_page_copy')){
+    document.getElementById('new_facebook_share_page_copy').style.display = "none";
+    localStorage.setItem(gqv('id')+"share",document.getElementById('new_facebook_share_page_copy').innerHTML);
+  }
+} else {
+  if(gqv('page')=="OnScreenThanks"){
+    tyhandler();
+    localStorage.setItem('advoID',gqv('id'));
+  } else {
+    if(gqv('page')=="TafThanks"){
+      taftyhandler();
+      localStorage.setItem('advoID',gqv('id'));
+    } else {
+      if(window.location.pathname.indexOf('2017AdvocacyShare')>-1){
+        tyfbhandler();
+      } else {
+        if(window.location.pathname.indexOf('AdvocacyList')>-1){
+          taflist();
+        }
+      }
+    }
+  }
+}
+
+/* footer header */
+function mb(){
+    if(window.innerWidth>700){
+	return (false);
+    } else {
+	return (true);
+    }
+}
+mobileq = mb();
+window.onresize = function(event){
+  mobileq = mb();
+  if(mobileq==false){
+    document.getElementById('body').classList.remove('advo_mo');
+    document.getElementById('wrapFooter').classList.remove('advo_mo');
+    document.getElementById('body').classList.add('advo_do');
+    document.getElementById('wrapFooter').classList.add('advo_do');
+  } else {
+    document.getElementById('body').classList.remove('advo_do');
+    document.getElementById('wrapFooter').classList.remove('advo_do');
+    document.getElementById('body').classList.add('advo_mo');
+    document.getElementById('wrapFooter').classList.add('advo_mo');
+  }
+  sharelayout();
+}
+
+function sharelayout(){
+  if(document.getElementById('facebookshare')){
+    if(window.innerWidth>700){
+      var parentBox = document.getElementById('sharebox').clientWidth;
+      newMargin = ((parentBox - 529)/2);
+      document.getElementById('facebookshare').style.margin = "0 "+newMargin+"px";
+    }
+  }
+}
+
+function layoutedits(){
+  if (typeof singlecolumnview !== 'undefined') {
+    if(singlecolumnview !== undefined && singlecolumnview !== null) {
+      if(singlecolumnview=="true"||singlecolumnview==true){
+        document.getElementById('column1').classList.add('singlecolumnview');
+        document.getElementById('column2').classList.add('singlecolumnview');
+        document.getElementById('message').classList.add('singlecolumnview');
+        document.getElementById('info').classList.add('singlecolumnview');
+        if(document.querySelectorAll('.bottom')[0]){
+          document.querySelectorAll('.bottom')[0].style.width = "100%";
+        }
+        if(document.getElementById('hellobox')){
+          var parentDiv = document.getElementById('column1');
+          parentDiv.insertBefore(document.getElementById('hellobox'), document.getElementById('description'));
+        }
+      } else {
+        document.getElementById('column1').classList.remove('singlecolumnview');
+        document.getElementById('column2').classList.remove('singlecolumnview');
+        document.getElementById('message').classList.remove('singlecolumnview');
+        document.getElementById('info').classList.remove('singlecolumnview');
+        if(document.querySelectorAll('.bottom')[0]){
+        }
+        if(document.getElementById('hellobox')){
+        }
+      }
+    }
+  }
+
+    return true;
+}
+
+function shortField(elm, side) {
+  if (elm && elm.parentNode.parentNode.classList.contains('label-field-wrap')) {
+    elm.parentNode.parentNode.classList.add(side+"-field")
+  }
+}
+
+if (document.getElementById('title')){
+  shortField(document.getElementById('title'), 'title')
+  shortField(document.getElementById('fname'), 'name-short')
+  shortField(document.getElementById('lname'), 'name-short')
+} else {
+  shortField(document.getElementById('fname'), 'left')
+  shortField(document.getElementById('lname'), 'right')
+}
+
+shortField(document.getElementById('city'), 'first-one-third')
+shortField(document.getElementById('state'), 'one-third')
+shortField(document.getElementById('zip'), 'one-third')
+
+
+// function stateZipOrg(){
+//   if(document.getElementById('zip')&&document.getElementById('state')){
+//     if(document.getElementById('zip').parentNode.parentNode.classList.contains('label-field-wrap')){
+//       if(document.getElementById('state').parentNode.parentNode.classList.contains('label-field-wrap')){
+//         document.getElementById('state').parentNode.parentNode.classList.add('half-field');
+//         document.getElementById('zip').parentNode.parentNode.classList.add('half-field');
+//       }
+//     }
+//   }
+//   return true;
+// }
+
+function fixfoot(){
+if(mobileq==true){
+  document.getElementById('body').classList.add('advo_mo');
+  document.getElementById('wrapFooter').classList.add('advo_mo');
+  if (document.querySelectorAll('#footer .span6')[0]) {
+  document.querySelectorAll('#footer .span6')[0].parentNode.appendChild(document.querySelectorAll('#footer .span6')[0]);
+}
+} else {
+  document.getElementById('body').classList.add('advo_do');
+  document.getElementById('wrapFooter').classList.add('advo_do');
+}
+}
+// make header
+function newheader(){
+
+  // var theheader = document.createElement('div');
+  // theheader.id = "headerTop";
+  // theheader.setAttribute('style','width:100%;max-width:100%;float:left;height:190px;margin-bottom:2em;');
+  // theheader.innerHTML = "<div style='margin:auto;width:100%;max-width:960px;' id='headerMiddle'><div style='width:100%;padding:0 20px; text-align: right;' id='headerInner'><a href='/' title='Home' rel='home' class='site-logo' id='site-logo--link' style='visibility:hidden'><img src='https://secure3.convio.net/tpl/images/content/pagebuilder/TPL_logo_cmyk_horiz200.jpg' alt='Home' style='margin-top:10px' id='homeLogo'></a></div></div>";
+  // var parentDiv = document.getElementById('wrapHeader').parentNode;
+  // parentDiv.insertBefore(theheader, document.getElementById('wrapHeader'));
+  //
+  // var hideorno = "#wrapHeader, .header-bottom,.header-right ul.menu{visibility:visible}";
+  // if (typeof lowdistraction !== 'undefined') {
+  //   if(lowdistraction !== undefined && lowdistraction !== null) {
+  //     if(lowdistraction=="true"||lowdistraction==true){
+  //       // hideorno = "/*.header-bottom,.header-right ul.menu,#block-system-main-menu .content .header,*/#block-menu-menu-secondary-menu .content ul.menu{visibility:hidden}#column1 h2.TakeAction{display:none!important} #navbar .header-bottom { margin-left: 140px; float: none!important }";
+  //       hideorno = "#block-menu-menu-secondary-menu .content ul.menu {visibility:hidden} #navbar .header-bottom { margin-left: 140px; float: none!important } #wrapHeader { height: 115px; } #wrapHeader:after { display: none !important; } .site-information { display: none;} .advo-site-information { display: block !important; text-align: right; margin: 0px 0;} .advo-site-information img { width: 140px; } .header-right {display: none;} .header-top {height: auto;} #wrapHeader, #header { height: auto; } #wrapHeader { visibility: visible; margin: 10px auto; } @media (min-width: 700px) { #wrapHeader, #header { width: 796px; min-width: 796px; } }";
+  //       // ill advised addition
+  //       if(document.querySelectorAll('.header-bottom')[0]){
+  //         document.querySelectorAll('.header-bottom')[0].innerHTML = "";
+  //         document.querySelectorAll('.header-bottom')[0].style.float = "none";
+  //       }
+  //       localStorage.setItem('advonav',lowdistraction);
+  //     } else {
+  //       localStorage.setItem('advonav',lowdistraction);
+  //     }
+  //   }
+  // }
+  //
+  // var header = document.getElementsByTagName('head')[0];
+  // var injection1 = document.createElement('style');
+  // injection1.id = "navbargo";
+  // injection1.type = "text/css";
+  // injection1.innerHTML = hideorno;
+  // header.appendChild(injection1);
+  // //document.getElementById('headerTop').style.display = "block";
+  // //document.getElementById('wrapHeader').style.display = "none";
+  // document.getElementById('site-logo--link').style.visibility = "visible";
+  return true;
+}
+
+/* end footer header */
+/* end wrapper update */
+
+function helloboxing(){
+if(document.getElementById('fname')&&document.getElementById('lname')&&document.getElementById('email')){
+    if(document.getElementById('email').value==null||document.getElementById('email').value==""){
+      // requested to make the checkboxes checked
+      if(document.querySelectorAll('p.ErrorMessage')[0]){}else{
+        if(document.getElementById('optin')&&document.getElementById('remember')){
+          document.getElementById('optin').checked = true;
+          document.getElementById('remember').checked = true;
+        }
+      }
+  } else {
+      var fname = document.getElementById('fname').value;
+      var lname = document.getElementById('lname').value;
+      fname = fname.replace(/[^A-Za-z0-9]/g, '');
+      //lname = lname.replace(/[^A-Za-z0-9]/g, '');
+      var email = document.getElementById('email').value;
+      var hellobox = document.createElement('div');
+      hellobox.id = "hellobox";
+      var newurl = encodeURIComponent(window.location.protocol+"//"+window.location.hostname+window.location.pathname+window.location.search+"&log=out");
+      hellobox.innerHTML = "<p><span>Welcome back, "+fname+"</span><BR>If you are not "+fname+", please click <a href=\"UserLogin?logout=&NEXTURL="+newurl+"\">here</a></p>";
+      // prepend to #column2
+      document.getElementById('column2').insertBefore(hellobox, document.getElementById('column2').childNodes[0]);
+  }
+}else{
+  /*var hellobox = document.createElement('div');
+  hellobox.id = "hellobox";
+  hellobox.innerHTML = "<p><span>Welcome!</span></p>";
+  document.getElementById('column2').insertBefore(hellobox, document.getElementById('column2').childNodes[0]);*/
+}
+}
+
+function listentothefields(){
+  var fields = ['fname','lname','email','street1','city','state','zip'];
+  for(var x=0;x<fields.length;x+=1){
+    (function(){
+      if(document.getElementById(fields[x])){
+        document.getElementById(fields[x]).addEventListener('change',updatefields,false);
+      }
+    })();
+  }
+}
+
+function updatefields(){
+  var labels = ['name0','email0','addr0','addr1'];
+  var trackarray = []
+      trackarray = [
+      ["fname","lname"],["email"],["street1"],["city","state","zip"]
+      ];
+  for(var x=0;x<labels.length;x+=1){
+    var value;
+    for(var y=0;y<trackarray[x].length;y+=1){
+      if(y==0){
+        if(document.getElementById(trackarray[x][y])){
+          value = document.getElementById(trackarray[x][y]).value;
+        }if(trackarray[x][y]=="fname"){
+            localStorage.setItem('advo'+trackarray[x][y],document.getElementById(trackarray[x][y]).value);
+          }
+      } else {
+        if(trackarray[x][y]=="state"){
+          if(document.getElementById(trackarray[x][y])){
+            value = value + ", " + document.getElementById(trackarray[x][y]).value;
+          }
+        } else {
+
+          if(document.getElementById(trackarray[x][y])){
+            value = value + " " + document.getElementById(trackarray[x][y]).value;
+          }
+        }
+      }
+    }
+    if(document.getElementById(labels[x])){
+      document.getElementById(labels[x]).innerHTML = value;
+      localStorage.setItem('advo'+labels[x],value);
+    }
+  }
+}
+
+        function gqv(variable) {
+            var query = window.location.search.substring(1);
+            var vars = query.split("&");
+            for (var i = 0; i < vars.length; i++) {
+                var pair = vars[i].split("=");
+                if (pair[0] == variable) {
+                    return pair[1];
+                }
+            }
+            return (false);
+        }
+
+        function IsArrayBufferSupported(){
+          // aus: https://stackoverflow.com/a/8927235
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', '/', true);
+            try{
+               xhr.responseType = "arraybuffer";
+               return true;
+            }catch(e){return false;}
+        }
+
+        function addprogressbar(a){
+          var a = a;
+          var b = gqv('id');
+          var ajaxy = new XMLHttpRequest();
+          var url = "https://secure.tpl.org/site/CRAdvocacyAPI/";
+          if (typeof threshold !== 'undefined') {
+            if(threshold !== undefined && threshold !== null) {
+              var thresholdforbar = Number(threshold);
+            } else {
+              var thresholdforbar = 49;
+            }
+          } else {
+              var thresholdforbar = 49;
+          }
+          var params = "method=getAdvocacyAlert&alert_id="+b+"&alert_type=action&response_format=json&v=1.0&api_key=7827782778";
+          ajaxy.open("POST", url, true);
+
+          //Send the proper header information along with the request
+          ajaxy.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+          ajaxy.onreadystatechange = function() {//Call a function when the state changes.
+              if(ajaxy.readyState == 4 && ajaxy.status == 200) {
+                  var theson = (JSON.parse(ajaxy.responseText));
+                  var currentamount = theson['getAdvocacyAlertResponse']['alert']['interactionCount'];
+                  var currentpercentage = Math.floor((Number(currentamount) / Number(a)) * 100);
+                  if(currentpercentage<1){currentpercentage=1}
+                  if(document.getElementById('prog')){}else{
+                    if(currentpercentage>thresholdforbar){var stylish=true;}else{stylish=false;}
+                    if(currentpercentage>99){var stylish=false};
+                    var left = Math.floor(Number(a) - Number(currentamount));
+                    var progressbarholder = document.createElement('div');
+                    progressbarholder.id = "prog";
+                    if(stylish==true){progressbarholder.innerHTML = "<div style=\"width:100%;float:left;height:2em;background:#eee;\"><div style=\"width:"+currentpercentage+"%;float:left;background:#40af49;height:2em\"></div></div><div><p style=\"font-style:italic\">"+left.toLocaleString()+" needed to meet "+Number(a).toLocaleString()+" supporter goal</p></div>";}else{progressbarholder.innerHTML = "<div style=\"width:100%;float:left\"><p style=\"text-align:right;font-style:italic\">"+Number(a).toLocaleString()+" supporter goal</p></div>";}
+                    document.getElementById('progressbar').appendChild(progressbarholder);
+                    document.getElementById('prog').style.visibility = "visible";
+                  }
+              }
+          }
+          ajaxy.send(params);
+        }
+
+        function facebookshare(){
+          var publicShare = true;
+          var b = gqv('advoShareID');
+          if(b==false||b=="false"){
+            b = localStorage.getItem('advoID');
+            publicShare = false;
+          }
+          if(publicShare==false||publicShare=="false"){
+            var c = localStorage.getItem('advofname');
+            var d = localStorage.getItem(localStorage.getItem('advoID')+"share");
+            if(d==""||d==null){
+              var d = "<strong>Now, pass this message on to your friends.</strong><BR>It's important that as many people as possible know that we're at risk of losing these national treasures.";
+            } else {
+              // use what's in storage
+            }
+        } else {  var c = "Friend" }
+          if(b==null||b==""){
+            window.location.href = "https://secure.tpl.org/site/Donation2?df_id=10031&mfc_pref=T&10031.donation=form1";
+            return false}else{
+          var ajaxy = new XMLHttpRequest();
+          var url = "https://secure.tpl.org/site/CRAdvocacyAPI/";
+          var params = "method=getAdvocacyAlert&alert_id="+b+"&alert_type=action&response_format=json&v=1.0&api_key=7827782778";
+          ajaxy.open("POST", url, true);
+          //Send the proper header information along with the request
+          ajaxy.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+          ajaxy.onreadystatechange = function() {//Call a function when the state changes.
+              if(ajaxy.readyState == 4 && ajaxy.status == 200) {
+                  var theson = (JSON.parse(ajaxy.responseText));
+                  //console.log(theson);
+                  var description = theson['getAdvocacyAlertResponse']['alert']['description'];
+                  var shareimage = theson['getAdvocacyAlertResponse']['alert']['thumbnail'];
+                  var title = theson['getAdvocacyAlertResponse']['alert']['title'];
+                  document.querySelectorAll('#fbookpad h3')[0].innerHTML = title;
+                  document.querySelectorAll('#fbookpad p')[0].innerHTML = description;
+                  if(c==null||c==""){}else{
+                    if(publicShare==true||publicShare=="true"){}else{
+                      document.querySelectorAll('#thankyoumessage h1')[0].innerHTML = "Thank you for taking action, "+c;
+                      document.querySelectorAll('#thankyoumessage p')[0].innerHTML = d;
+                    }
+                    document.querySelectorAll('#sharebutton div a')[0].setAttribute('href','https://www.facebook.com/sharer/sharer.php?u=https%3A//secure.tpl.org/site/Advocacy?pagename=homepage%26cmd=display%26page=UserAction%26id='+theson['getAdvocacyAlertResponse']['alert']['alertId']);
+                    document.querySelectorAll('#sharebutton div a')[0].setAttribute('target','_blank');
+                    document.getElementById('sharebutton').style.visibility = "visible";
+                    document.getElementById('facebookshare').style.visibility = "visible";
+                    if(document.getElementById('facebookshareimg')){
+                      if(shareimage==null||shareimage==""){
+                          document.getElementById('facebookshareimg').style.visibility = "visible";
+                      } else {
+                        document.getElementById('facebookshareimg').src = "https://secure.tpl.org/images/Thumbnails/ActionAlerts/"+theson['getAdvocacyAlertResponse']['alert']['alertId'];
+                        document.getElementById('facebookshareimg').style.visibility = "visible";
+                      }
+                      document.getElementById('facebookshareimg').addEventListener('click',function(){
+                        window.open(
+                          'https://www.facebook.com/sharer/sharer.php?u=https%3A//secure.tpl.org/site/Advocacy?pagename=homepage%26cmd=display%26page=UserAction%26id='+theson['getAdvocacyAlertResponse']['alert']['alertId'],
+                          '_blank'
+                        );
+                      });
+                    }
+                    if(publicShare==false||publicShare=="false"){
+                      var oldformurl = localStorage.getItem('postadvo'+b);
+                      if(oldformurl==null||oldformurl==""){
+                        var newformurl = false;
+                      } else {
+                        var newformurl = oldformurl;
+                      }
+                    } else {
+                      var newformurl0 = gqv('advoShareForm');
+                      if(newformurl0==false||newformurl0=="false"){
+                        var newformurl = oldformurl;
+                      } else {
+                        newformurl = 'http://contacts.tpl.org/site/Donation2?df_id='+newformurl0+'&mfc_pref=T&'+newformurl0+'.donation=form1&utm_source='+gqv('utm_source')+'&utm_medium='+gqv('utm_medium')+'&utm_campaign='+gqv('utm_campaign');
+                      }
+                    }
+                    sharelayout();
+                    document.querySelectorAll('#nosharebutton div a')[0].setAttribute('href',newformurl+'&ptxt='+theson['getAdvocacyAlertResponse']['alert']['alertId']);
+                  }
+                  if(newformurl == false){
+                    document.querySelectorAll('#nosharebutton')[0].style.display = "none";
+                  } else {
+                    document.querySelectorAll('#nosharebutton div a')[0].innerHTML = "SKIP";
+                    document.querySelectorAll('#nosharebutton')[0].style.display = "block";
+                  }
+              }
+          }
+          ajaxy.send(params);
+        }
+      }
+
+
+function formContent(){
+  if (typeof donationForm !== 'undefined') {
+    localStorage.setItem('postadvo'+gqv('id'),donationForm);
+    return true;  } else {
+    return false;
+  }
+}
+
+function taftyhandler(){
+if (typeof localStorage !== 'undefined') {
+var b = localStorage.getItem('advoID');
+var fromURL = localStorage.getItem('advoID');
+                    if(fromURL==null||fromURL==""){
+                      var newformurl = "https://www.tpl.org";
+                    } else {
+                      var newformurl = "	http://contacts.tpl.org/site/Advocacy?pagename=homepage&id="+fromURL;
+                    }
+} else {
+  var newformurl = "https://www.tpl.org";
+}
+setTimeout(function(){window.location.href = newformurl;},0);
+}
+</script>
+<script type="text/javascript">
+  // rewriting the "what's this" link because the default page is not set up
+  if (document.querySelector('[for="remember"]')) {
+  document.querySelector('[for="remember"] a').href="https://www.tpl.org/privacy-policy";
+  document.querySelector('[for="remember"] a').setAttribute('onclick',"javascript:MM_openBrWindow('https://www.tpl.org/privacy-policy','Description','toolbar=no,scrollbars=yes,resizable=yes,alwaysRaised=yes,dependent=yes,width=700,height=500'); return false;")
+  }
+
+  // remove the "To " line if it is empty:
+  if (document.getElementById('message') && document.getElementById('message').children[2].innerHTML == "To&nbsp;"){
+document.getElementById('message').children[2].style.display = "none";
+}
+</script>
+<script type="text/javascript">
+  function rewriteField(elm, text){
+    if (elm) {
+      elm.innerHTML = text;
+    }
+  }
+  // rewrite address, state, zip, and email
+  rewriteField(document.querySelector('[for="state"] .label-text'), "State");
+  rewriteField(document.querySelector('[for="zip"] .label-text'), "Zip");
+  rewriteField(document.querySelector('[for="street1"] .label-text'), "Address");
+  rewriteField(document.querySelector('[for="email"] .label-text'), "Email");
+
+  // remove colons
+  for (i=0;i<document.getElementsByClassName('label-text').length;i++){
+document.getElementsByClassName('label-text')[i].innerHTML = document.getElementsByClassName('label-text')[i].innerHTML.replace(':','')
+}
+
+if (document.getElementById('state')) {
+  document.getElementById('state').children[0].innerHTML = ""
+}
+
+</script>
+<script type="text/javascript">
+
+if (document.querySelector('[for="middle"]')){
+  document.querySelector('[for="middle"]').parentNode.classList.remove('label-field-wrap');
+  document.querySelector('#message h3').style.display = "none";
+  // console.log(document.querySelector('[for="middle"]').parentNode);
+  // console.log(document.getElementById('message'));
+  document.getElementById('message').prepend(document.querySelector('[for="middle"]').parentNode);
+}
+
+  </script>
+<script type="text/javascript">
+
+for (i=0;i<document.getElementsByClassName('afterForm').length;i++){
+  document.getElementById('column2').appendChild(document.getElementsByClassName('afterForm')[i])
+}
+
+</script>
+
+<script type="text/javascript">
+
+function toggleHidden(elm) {
+  elm.classList.contains('hide') ? elm.classList.remove('hide') : elm.classList.add('hide');
+}
+
+function togglePreviewText(){
+  toggleHidden(document.getElementById('showmore'));
+  toggleHidden(document.getElementById('showless'));
+  toggleHidden(document.getElementsByClassName('preview-text')[0]);
+}
+
+  if (document.getElementById('showmore') && document.getElementById('showless')) {
+    document.getElementById('showmore').addEventListener('click', function(e){
+      e.preventDefault();
+      togglePreviewText();
+    });
+    document.getElementById('showless').addEventListener('click', function(e){
+      e.preventDefault();
+      togglePreviewText();
+    })
+  }
+</script>
+
+<script type="text/javascript">
+  if (document.getElementById('letter-container') && mobileq && document.getElementById('showletter')) {
+    document.getElementById('letter-container').appendChild(document.getElementById('message'))
+
+    var hideLetter = document.createElement('a')
+    hideLetter.href = "#"
+    hideLetter.classList.add('progressive-reveal');
+    hideLetter.id = "hideletter";
+    hideLetter.innerHTML = "Hide letter";
+    hideLetter.style.display = "block";
+    document.getElementById('message').appendChild(hideLetter)
+    document.getElementById('showletter').addEventListener('click', function(e) {
+      e.preventDefault();
+      toggleHidden(document.getElementById('letter-container'))
+      toggleHidden(document.getElementById('showletter'))
+    })
+    document.getElementById('hideletter').addEventListener('click', function(e) {
+      e.preventDefault();
+      toggleHidden(document.getElementById('letter-container'))
+      toggleHidden(document.getElementById('showletter'))
+
+    })
+    if (document.querySelector('.submit-wrap.bottom')){
+      document.getElementById('letter-container').appendChild(document.querySelector('.submit-wrap.bottom'))
+    }
+  } else if (document.getElementById('showletter')) {
+    document.getElementById('showletter').style.display = "none"
+  }
+</script>
+
+
+    </div><!--WRAPMAIN END-->
+    <div id="wrapFooter">
+        <div id="footer">
+          <div>
+
+  <!-- this is needed for advojs to run, for now -->
+  <div style="display: none;" class="ctools-collapsible-handle" id="newhandle">+</div>
+  <div style="display: none;" class="ctools-collapsible-handle" id="newsliders">+</div>
+  <!--
+  <div class="footer-second clearfix">
+    <div class="row-fluid">
+      <div class="span6">
+        <div class="region region-footer-left">
+          <div id="block-block-13" class="block block-block">
+            <div class="content">
+              <p>The Trust for Public Land is an IRS approved 501(c)(3) tax-exempt organization. All donations are tax deductible to the extent provided by law. Our Federal Identification Number (EIN) is 23-7222333.
+                <br />
+                <br />&copy; 2026 The Trust for Public Land</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="span6">
+        <div class="region region-footer-right">
+          <div id="block-block-14" class="block block-block">
+            <div class="content">
+
+              <ul>
+
+                <li><a href="https://www.tpl.org/resource/legal-disclosure-terms-use">Legal disclosure and terms of Use</a></li>
+                <li>| <a href="https://www.tpl.org/privacy-policy">Privacy Policy</a></li>
+
+              </ul>
+            </div>
+          </div>
+          <div id="block-block-16" class="block block-block">
+            <div class="content">
+
+              <p>
+
+                <a href="http://www.charitywatch.org/toprated.html"><img src="https://secure3.convio.net/tpl/assets/images/badges-charitywatch.png" alt="" width="102" height="81" /></a>
+                <a href="http://www.give.org/charity-reviews/national/trust-for-public-land-the-in-san-francisco-ca-1406" target="_blank" id="block-block-16-link-4cdd011"><img height="87" src="https://www.tpl.org/sites/default/files/aC-seal-horizontal-w-url-black.png" style="margin-left:20px;" width="173"></a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+  <div class="footer-second clearfix footer-second2">
+    <div class="row-fluid">
+      <div class="span5">
+        <div class="region region-footer-left">
+          <div id="block-block-13" class="block block-block">
+
+
+            <div class="content">
+<a href="https://tpl.org"><img src="https://secure.tpl.org/assets/images/logos/logo-light.svg" alt="Trust for Public Land Logo" /></a>
+              <p>The Trust for Public Land is an IRS approved 501(c)(3) tax-exempt organization. All donations are tax deductible to the extent provided by law. Our Federal Identification Number (EIN) is 23-7222333.
+                <br> &copy; 2026 Trust for Public Land
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="span7">
+        <div class="region region-footer-right">
+          <div id="block-block-14" class="block block-block">
+
+
+            <div class="content">
+              <ul>
+                <li><a href="https://www.tpl.org/resource/legal-disclosure-terms-use" id="block-block-14-link-b638864">Legal disclosure and terms of use</a></li>
+                <li><span>|</span> <a href="https://www.tpl.org/privacy-policy" id="block-block-14-link-1cfe113">Privacy policy</a></li>
+              </ul>
+            </div>
+          </div>
+          <div id="block-block-16" class="block block-block">
+
+
+            <div class="content">
+              <p>
+
+                <img src="https://secure.tpl.org/images/content/pagebuilder/seal_green_tagline.png" width="92" />
+
+                <a href="https://www.charitywatch.org/charities/trust-for-public-land" target="_blank"><img class="charity-watch" src="https://secure.tpl.org/images/content/pagebuilder/charitywatch-logo.png" alt="Charity Watch" width="92" /></a>
+
+                <a href="http://www.give.org/charity-reviews/national/trust-for-public-land-the-in-san-francisco-ca-1406" target="_blank">&nbsp;&nbsp;&nbsp;<img class="bbb-badge" src="https://secure3.convio.net/tpl/images/content/pagebuilder/bbb.png" alt="BBB Accredited Charity" width="145" border="0" /></a>
+
+                <a href="https://www.guidestar.org/profile/23-7222333" target="_blank"><img src="https://widgets.guidestar.org/TransparencySeal/7188714" width="92" /></a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+.footer-second .row-fluid .span7:first-child {
+   background: none;
+   padding-top: 0;
+}
+#block-block-16 > div > p {
+      display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    grid-gap: 14px;
+    align-items: center;
+}
+#block-block-16 > div > p > img {
+   display: block;
+   width: 100%;
+}
+#block-block-16 > div > p a {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+@media only screen and (max-width: 767px) {
+   #block-block-16 > div > p {
+      grid-template-columns: repeat(2, 120px);
+      justify-content: space-between;
+      margin: 0 auto;
+      max-width: 300px;
+      width: 100%;
+   }
+}
+</style>
+<!-- </div> -->
+<!-- Google Code for Remarketing tag removed -->
+
+
+        </div>
+        <!-- #footer -->
+    </div><!-- WRAPFOOTER : END-->
+</div>
+<!-- #wrapper -->
+<!-- <script type="text/javascript">
+ Cufon.now();</script> -->
+
+
+<!--ADVOCACY SCRIPTS-->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" type="text/javascript"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" type="text/javascript"></script>
+<!-- ADVOCACY SCRIPTS -->
+
+</body>
+
+</html>

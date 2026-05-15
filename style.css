@@ -1,0 +1,490 @@
+/* ====================================================
+   Brand color tokens
+   (originally defined in Convio's UserGlobalStyle-2022.css)
+   Tweak hex values here if they don't match TPL brand.
+   ==================================================== */
+:root {
+	--evergreen: #006837;
+	--fern: #39B54A;
+	--grass: #8CC63F;
+	--sky: #5DD8D8;
+	--sun: #F7931E;
+	--snow: #F5FAF1;
+	--moss: #CEE4C5;
+	--earth: #362229;
+}
+
+/* ====================================================
+   Fonts
+   ==================================================== */
+@font-face {
+	font-family: "Helvetica Neue";
+	font-weight: 300;
+	src: url("fonts/Helvetica_Neue_Light.woff") format("woff"), url("fonts/Helvetica_Neue_Light.woff2") format("woff2");
+}
+@font-face {
+	font-family: "Helvetica Neue";
+	font-weight: 400;
+	src: url("fonts/Helvetica_Neue_Medium.woff") format("woff"), url("fonts/Helvetica_Neue_Medium.woff2") format("woff2");
+}
+@font-face {
+	font-family: "Helvetica Neue";
+	font-weight: 500;
+	src: url("fonts/Helvetica_Neue_Roman.woff") format("woff"), url("fonts/Helvetica_Neue_Roman.woff2") format("woff2");
+}
+@font-face {
+	font-family: "Helvetica Neue";
+	font-weight: bold;
+	src: url("fonts/Helvetica_Neue_Bold.woff") format("woff"), url("fonts/Helvetica_Neue_Bold.woff2") format("woff2");
+}
+@font-face {
+	font-family: "PT Sans";
+	font-weight: 400;
+	src: url("fonts/pt-sans-v12-latin-regular.woff") format("woff"), url("fonts/pt-sans-v12-latin-regular.woff2") format("woff2");
+}
+@font-face {
+	font-family: "PT Sans";
+	font-weight: 400;
+	font-style: italic;
+	src: url("fonts/pt-sans-v12-latin-italic.woff") format("woff"), url("fonts/pt-sans-v12-latin-italic.woff2") format("woff2");
+}
+@font-face {
+	font-family: "PT Sans";
+	font-weight: bold;
+	src: url("fonts/pt-sans-v12-latin-700.woff") format("woff"), url("fonts/pt-sans-v12-latin-700.woff2") format("woff2");
+}
+@font-face {
+	font-family: "PT Sans";
+	font-weight: bold;
+	font-style: italic;
+	src: url("fonts/pt-sans-v12-latin-700italic.woff") format("woff"), url("fonts/pt-sans-v12-latin-700italic.woff2") format("woff2");
+}
+
+/* ====================================================
+   Minimal resets + base
+   (replaces Bootstrap/normalize)
+   ==================================================== */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+	font-family: "PT Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #222;
+	line-height: 1.4;
+}
+img { border: 0; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+a:hover { text-decoration: underline; }
+table { border-collapse: collapse; }
+h1, h2, h3, h4 { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+/* ====================================================
+   Bootstrap-grid shims (only the classes the markup uses)
+   ==================================================== */
+.container { width: 100%; margin: 0 auto; padding: 0 15px; }
+.row { margin: 0; }
+.col-sm-12 { width: 100%; }
+.row-fluid { display: flex; flex-wrap: wrap; }
+.span5 { flex: 0 0 41.49%; max-width: 41.49%; }
+.span7 { flex: 0 0 57.45%; max-width: 57.45%; }
+.clearfix::after { content: ""; display: table; clear: both; }
+@media (max-width: 767px) {
+	.row-fluid { flex-direction: column; }
+	.span5, .span7 { flex: 0 0 100%; max-width: 100%; }
+}
+
+/* ====================================================
+   Page wrapper styles (consolidated from original inline CSS)
+   ==================================================== */
+body {
+	background: var(--evergreen);
+}
+body #header {
+	width: auto;
+	max-width: 996px;
+	margin: 0 auto;
+	padding: 44px 20px 0;
+}
+body #header .header-top {
+	font-size: 0;
+	text-align: center;
+}
+body #header .header-top .header-right {
+	float: none;
+	padding-top: 0;
+}
+body #header .header-top .header-right .region-header-right {
+	float: none;
+	text-align: right;
+}
+body #header .header-top .header-right .region-header-right #block-menu-menu-secondary-menu {
+	float: none;
+	visibility: visible;
+}
+body #header .site-information a {
+	margin-bottom: -6px;
+	display: inline-block;
+}
+body #header .site-information a img {
+	max-width: 150px;
+	height: auto;
+}
+body #wrapMain {
+	padding-top: 40px;
+	padding-bottom: 0;
+}
+body #main {
+	width: auto;
+	max-width: 996px;
+	margin: 0 auto;
+	background-color: transparent;
+}
+body #main #contentFull {
+	min-height: none;
+	background-color: transparent;
+}
+body #main #contentFull .container {
+	width: auto;
+	max-width: none;
+	padding-left: 0;
+	padding-right: 0;
+}
+body #main .container .col-sm-12 {
+	float: none;
+	padding: 0;
+	background-color: transparent;
+}
+body #footer {
+	width: auto;
+	max-width: 980px;
+	margin: 0 auto;
+	padding: 30px 20px;
+	color: white;
+}
+body #footer a { color: white; }
+
+@media only screen and (max-device-width: 767px), only screen and (max-width: 767px) {
+	body #footer .region-footer-right {
+		margin-left: 0;
+	}
+}
+@media only screen and (max-device-width: 1023px), only screen and (max-width: 1023px) {
+	body #wrapFooter #footer {
+		width: 95%;
+	}
+}
+@media only screen and (max-device-width: 1050px), only screen and (max-width: 1050px) {
+	body #header,
+	body #main {
+		max-width: 90%;
+	}
+}
+
+/* ====================================================
+   Page sections (Give / Act / Pledge)
+   ==================================================== */
+.gd-section {
+	background: white;
+	margin-bottom: 50px;
+	padding-bottom: 50px;
+}
+.gd-section h1 {
+	margin-bottom: 20px;
+}
+.gd-section p {
+	font-size: 16px;
+	line-height: 22px;
+}
+.inset {
+	padding: 30px 50px 0 50px;
+}
+.inset p {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+#gd-title .hero,
+.section-hero {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+#gd-title .hero.desktop-only {
+	aspect-ratio: 1425/675;
+}
+#gd-title .hero.mobile-only {
+	display: none;
+	aspect-ratio: 555/570;
+}
+#gd-title .inset {
+	position: relative;
+	margin: -50px 50px 0 50px;
+	padding: 50px 50px calc(50px - 1em) 50px;
+}
+#gd-title .inset h1 {
+	margin-top: 0;
+}
+#gd-title .inset h1 strong {
+	display: block;
+}
+.light-moss {
+	background: var(--snow);
+}
+h1.section-title {
+	font-weight: bold;
+	font-size: 60px;
+	display: inline-block;
+	margin: 0;
+	padding: 16px 40px 6px 50px;
+	border-bottom-right-radius: 30px;
+	color: white;
+}
+h1.section-title.sun { background: var(--sun); }
+h1.section-title.grass { background: #39B54A; }
+h1.section-title.sky { background: var(--sky); }
+
+.section-hero {
+	margin-bottom: 34px;
+}
+.two-col {
+	display: flex;
+	margin-top: 40px;
+}
+.two-col > * {
+	flex: 0 0 50%;
+}
+.two-col #section-image {
+	width: 100%;
+	height: auto;
+	display: block;
+	padding-right: 50px;
+	object-fit: contain;
+	object-position: top;
+	min-width: 0;
+}
+.two-col #donor-table {
+	margin-top: -5px;
+}
+.two-col #most-recent {
+	width: calc(100% - 50px);
+}
+.two-col #most-recent tr:first-of-type td {
+	border-top: 1px solid #D9D9D9;
+}
+.two-col #most-recent td {
+	border-bottom: 1px solid #D9D9D9;
+	font-size: 14px;
+}
+.two-col #most-recent td:first-of-type {
+	border-left: 1px solid #D9D9D9;
+	padding: 10px 0 10px 20px;
+}
+.two-col #most-recent td:last-of-type {
+	border-right: 1px solid #D9D9D9;
+	width: 70px;
+}
+
+.green-btn {
+	display: inline-block;
+	border-radius: 50px;
+	line-height: 50px;
+	font-size: 16px;
+	background: var(--evergreen);
+	color: white;
+	margin-top: 20px;
+	transition: 0.4s background;
+	text-align: center;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	zoom: 130%;
+}
+.green-btn:hover,
+.green-btn:focus {
+	background: var(--fern);
+	color: white;
+	text-decoration: none;
+}
+.fixed-width { width: 165px; }
+
+/* ====================================================
+   Thermometers
+   ==================================================== */
+.therm {
+	display: block;
+	margin-top: -50px;
+	text-align: right;
+	padding-left: 50px;
+	padding-right: 50px;
+}
+.therm-box {
+	display: inline-block;
+	max-width: 560px;
+	width: 100%;
+	height: 54px;
+	padding-top: 14px;
+	padding-bottom: 14px;
+	padding-right: 36px;
+	background: var(--moss);
+}
+.therm-fill {
+	position: relative;
+	width: 0%;
+	min-width: 12px;
+	height: 27px;
+	background: linear-gradient(to bottom, var(--sun) 0%, var(--sun) 33%, var(--grass) 33%, var(--grass) 66%, var(--sky) 66%, var(--sky) 100%);
+	transition: 4.2s width;
+	transition-timing-function: linear;
+}
+.therm-fill::after {
+	display: block;
+	position: absolute;
+	content: "";
+	top: -13px;
+	left: calc(100% - 14px);
+	width: 51px;
+	height: 51px;
+	background-size: contain;
+}
+#therm-give-fill::after {
+	background-image: url(images/givingday-give-thermometer.png);
+}
+#therm-act-fill::after {
+	background-image: url(images/givingday-act-thermometer.png);
+}
+#therm-pledge-fill::after {
+	left: calc(100% - 13px);
+	width: 50px;
+	background-image: url(images/givingday-pledge-thermometer.png);
+}
+.therm-number {
+	padding-top: 8px;
+	font-weight: bold;
+	font-size: 24px;
+	line-height: 29px;
+	text-align: right;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* ====================================================
+   Donor table row stagger animation
+   ==================================================== */
+@keyframes fadeIn {
+	from { opacity: 0; transform: translateY(20px); }
+	to   { opacity: 1; transform: translateY(0); }
+}
+#most-recent tr {
+	opacity: 0;
+	animation-fill-mode: forwards;
+}
+#most-recent tr:nth-child(1) { animation: fadeIn 0.5s ease-out 1.0s forwards; }
+#most-recent tr:nth-child(2) { animation: fadeIn 0.5s ease-out 1.4s forwards; }
+#most-recent tr:nth-child(3) { animation: fadeIn 0.5s ease-out 1.8s forwards; }
+#most-recent tr:nth-child(4) { animation: fadeIn 0.5s ease-out 2.2s forwards; }
+#most-recent tr:nth-child(5) { animation: fadeIn 0.5s ease-out 2.6s forwards; }
+
+/* ====================================================
+   Responsive: section/thermometer breakpoints
+   ==================================================== */
+@media only screen and (max-device-width: 960px), only screen and (max-width: 960px) {
+	.therm {
+		margin-top: 40px;
+		margin-bottom: -22px;
+	}
+	.therm-box {
+		max-width: 100%;
+	}
+}
+
+@media only screen and (max-device-width: 650px), only screen and (max-width: 650px) {
+	.inset {
+		padding: 34px 20px;
+	}
+	#gd-title .hero.mobile-only {
+		display: block;
+	}
+	#gd-title .hero.desktop-only {
+		display: none;
+	}
+	#gd-title .inset {
+		margin-top: -60px;
+		margin-left: 20px;
+		margin-right: 20px;
+		padding: 34px 20px calc(34px - 1em) 20px;
+	}
+	#gd-title .inset h1 strong {
+		display: inline;
+	}
+	.two-col {
+		display: flex;
+		flex-direction: column;
+		margin-top: 10px;
+	}
+	.two-col > * {
+		flex: 1;
+	}
+	.two-col #most-recent {
+		width: 100%;
+	}
+	.two-col #donor-table {
+		margin-top: 40px;
+		margin-left: 20px;
+		margin-right: 20px;
+	}
+	#gd-act.gd-section,
+	#gd-pledge.gd-section {
+		padding-bottom: 10px;
+	}
+	#gd-act .section-hero,
+	#gd-pledge .section-hero {
+		height: 320px;
+		object-fit: cover;
+	}
+	#gd-act .section-hero { object-position: 53%; }
+	#gd-pledge .section-hero { object-position: 52%; }
+	.therm {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+}
+
+/* ====================================================
+   Footer
+   ==================================================== */
+.footer-second .row-fluid .span7:first-child {
+	background: none;
+	padding-top: 0;
+}
+#block-block-16 > div > p {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+	grid-gap: 14px;
+	align-items: center;
+}
+#block-block-16 > div > p > img {
+	display: block;
+	width: 100%;
+}
+#block-block-16 > div > p a {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+@media only screen and (max-width: 767px) {
+	#block-block-16 > div > p {
+		grid-template-columns: repeat(2, 120px);
+		justify-content: space-between;
+		margin: 0 auto;
+		max-width: 300px;
+		width: 100%;
+	}
+}
+#block-block-13 p {
+	font-size: 13px;
+	line-height: 1.5;
+}
+#block-block-14 ul {
+	list-style: none;
+	padding: 0;
+	margin: 0 0 20px 0;
+	font-size: 13px;
+}
+#block-block-14 li {
+	display: inline-block;
+	margin-right: 8px;
+}

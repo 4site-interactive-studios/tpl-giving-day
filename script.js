@@ -63,96 +63,101 @@
 (function initImpactCarousel() {
 	var track = document.querySelector(".impact-carousel .carousel-track");
 	if (!track) return;
-	var prev = document.querySelector(".impact-carousel .carousel-arrow.prev");
-	var next = document.querySelector(".impact-carousel .carousel-arrow.next");
+	var prevBtn = document.querySelector(".impact-carousel .carousel-arrow.prev");
+	var nextBtn = document.querySelector(".impact-carousel .carousel-arrow.next");
 
-	var originals = Array.prototype.slice.call(track.querySelectorAll(".carousel-slide"));
-	var n = originals.length;
+	var n = track.querySelectorAll(".carousel-slide").length;
 	if (n <= 1) return;
 
-	// Clone the full slide set at both ends. DOM ends up as:
-	//   [c1..cN, r1..rN, c1..cN]
-	// Real slides occupy indices [n .. 2n-1]. Initial scroll lands on real slide 0.
-	originals.forEach(function(slide) {
-		var c = slide.cloneNode(true);
-		c.classList.add("carousel-clone");
-		c.setAttribute("aria-hidden", "true");
-		track.appendChild(c);
-	});
-	for (var i = n - 1; i >= 0; i--) {
-		var c = originals[i].cloneNode(true);
-		c.classList.add("carousel-clone");
-		c.setAttribute("aria-hidden", "true");
-		track.insertBefore(c, track.firstChild);
-	}
+	// Treadmill setup: pre-shift the last slide to the front so we have a slide
+	// to the left of "home". Lets the user swipe-backward into it instead of
+	// hitting scrollLeft=0 as a hard edge.
+	track.insertBefore(track.lastElementChild, track.firstElementChild);
 
-	function scrollToIndex(idx, smooth) {
-		var slides = track.querySelectorAll(".carousel-slide");
-		if (!slides[idx]) return;
-		var trackRect = track.getBoundingClientRect();
-		var slideRect = slides[idx].getBoundingClientRect();
-		var pad = parseInt(getComputedStyle(track).paddingLeft, 10) || 0;
-		var target = track.scrollLeft + (slideRect.left - trackRect.left) - pad;
-		if (smooth) {
-			track.scrollTo({ left: target, behavior: "smooth" });
-		} else {
-			track.scrollLeft = target;
-		}
-	}
-
-	function leftmostSnappedIndex() {
-		var slides = track.querySelectorAll(".carousel-slide");
-		var trackRect = track.getBoundingClientRect();
-		var pad = parseInt(getComputedStyle(track).paddingLeft, 10) || 0;
-		var bestIdx = -1;
-		var bestDiff = Infinity;
-		for (var i = 0; i < slides.length; i++) {
-			var diff = Math.abs(slides[i].getBoundingClientRect().left - trackRect.left - pad);
-			if (diff < bestDiff) { bestDiff = diff; bestIdx = i; }
-		}
-		return bestIdx;
-	}
-
-	// Position on the first real slide once layout settles.
-	requestAnimationFrame(function() { scrollToIndex(n, false); });
-
-	// After a scroll settles, if we're sitting on a clone, silently jump to its real twin.
-	var resetting = false;
-	var settleTimer;
-	track.addEventListener("scroll", function() {
-		if (resetting) return;
-		clearTimeout(settleTimer);
-		settleTimer = setTimeout(function() {
-			var idx = leftmostSnappedIndex();
-			if (idx < 0) return;
-			if (idx < n) {
-				resetting = true;
-				scrollToIndex(idx + n, false);
-				requestAnimationFrame(function() { resetting = false; });
-			} else if (idx >= 2 * n) {
-				resetting = true;
-				scrollToIndex(idx - n, false);
-				requestAnimationFrame(function() { resetting = false; });
-			}
-		}, 150);
-	});
-
-	function scrollByOne(dir) {
-		var slide = track.querySelector(".carousel-slide");
-		if (!slide) return;
+	function getStep() {
+		var first = track.querySelector(".carousel-slide");
+		if (!first) return 0;
 		var gap = parseInt(getComputedStyle(track).gap, 10) || 0;
-		var step = slide.getBoundingClientRect().width + gap;
-		track.scrollBy({ left: dir * step, behavior: "smooth" });
+		return first.getBoundingClientRect().width + gap;
 	}
 
-	if (prev) prev.addEventListener("click", function() { scrollByOne(-1); });
-	if (next) next.addEventListener("click", function() { scrollByOne(1); });
+	// Set scrollLeft without triggering the CSS smooth-scroll behavior.
+	function setScrollInstant(target) {
+		var saved = track.style.scrollBehavior;
+		track.style.scrollBehavior = "auto";
+		track.scrollLeft = target;
+		track.style.scrollBehavior = saved || "";
+	}
+
+	// Move k slides from front of DOM to end; compensate scrollLeft so the
+	// visible position doesn't change.
+	function rotateForward(k) {
+		var step = getStep();
+		for (var i = 0; i < k; i++) {
+			track.appendChild(track.firstElementChild);
+		}
+		setScrollInstant(track.scrollLeft - k * step);
+	}
+
+	// Move k slides from end of DOM to front; compensate scrollLeft.
+	function rotateBackward(k) {
+		var step = getStep();
+		for (var i = 0; i < k; i++) {
+			track.insertBefore(track.lastElementChild, track.firstElementChild);
+		}
+		setScrollInstant(track.scrollLeft + k * step);
+	}
+
+	// After every scroll settles, rotate the DOM so the user is back at "home"
+	// (scrollLeft = one step). Net effect: scrollLeft stays bounded, the slide
+	// array silently rotates, and the user perceives endless scrolling in both
+	// directions with no edges and no resets.
+	var settling = false;
+	var settleTimer;
+	function settle() {
+		if (settling) return;
+		var step = getStep();
+		if (!step) return;
+		var diff = Math.round(track.scrollLeft / step) - 1;
+		if (diff !== 0) {
+			settling = true;
+			if (diff > 0) rotateForward(diff);
+			else rotateBackward(-diff);
+			requestAnimationFrame(function() { settling = false; });
+		}
+	}
+	track.addEventListener("scroll", function() {
+		if (settling) return;
+		clearTimeout(settleTimer);
+		settleTimer = setTimeout(settle, 150);
+	});
+
+	function scrollNext() {
+		track.scrollBy({ left: getStep(), behavior: "smooth" });
+	}
+	function scrollPrev() {
+		// Move the trailing slide to the front first so scrollLeft has room to
+		// animate backward by one step; then trigger the smooth scroll.
+		settling = true;
+		rotateBackward(1);
+		requestAnimationFrame(function() {
+			settling = false;
+			track.scrollBy({ left: -getStep(), behavior: "smooth" });
+		});
+	}
+
+	// Initial home position: scrollLeft = one step, so the original first slide
+	// (now at DOM index 1 after the pre-rotation) is the leftmost-visible slide.
+	setScrollInstant(getStep());
+
+	if (prevBtn) prevBtn.addEventListener("click", scrollPrev);
+	if (nextBtn) nextBtn.addEventListener("click", scrollNext);
 
 	track.setAttribute("tabindex", "0");
 	track.setAttribute("role", "region");
 	track.setAttribute("aria-label", "Impact stories carousel");
 	track.addEventListener("keydown", function(e) {
-		if (e.key === "ArrowRight") { e.preventDefault(); scrollByOne(1); }
-		else if (e.key === "ArrowLeft") { e.preventDefault(); scrollByOne(-1); }
+		if (e.key === "ArrowRight") { e.preventDefault(); scrollNext(); }
+		else if (e.key === "ArrowLeft") { e.preventDefault(); scrollPrev(); }
 	});
 })();

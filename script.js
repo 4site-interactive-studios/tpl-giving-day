@@ -66,13 +66,29 @@
 	var prevBtn = document.querySelector(".impact-carousel .carousel-arrow.prev");
 	var nextBtn = document.querySelector(".impact-carousel .carousel-arrow.next");
 
-	var n = track.querySelectorAll(".carousel-slide").length;
+	var originals = Array.prototype.slice.call(track.querySelectorAll(".carousel-slide"));
+	var n = originals.length;
 	if (n <= 1) return;
 
-	// Treadmill setup: pre-shift the last slide to the front so we have a slide
-	// to the left of "home". Lets the user swipe-backward into it instead of
-	// hitting scrollLeft=0 as a hard edge.
-	track.insertBefore(track.lastElementChild, track.firstElementChild);
+	// Stack many copies of the slide set at both ends of the track. The user lands
+	// in the middle and can scroll far in either direction without ever reaching
+	// an edge — so there's no boundary to reset at, no jumps. Each "copy" is the
+	// full set of n slides; total DOM slides = n * (2*COPIES_EACH_SIDE + 1).
+	var COPIES_EACH_SIDE = 5;
+	for (var c = 0; c < COPIES_EACH_SIDE; c++) {
+		originals.forEach(function(slide) {
+			var clone = slide.cloneNode(true);
+			clone.classList.add("carousel-clone");
+			clone.setAttribute("aria-hidden", "true");
+			track.appendChild(clone);
+		});
+		for (var i = n - 1; i >= 0; i--) {
+			var cloneLead = originals[i].cloneNode(true);
+			cloneLead.classList.add("carousel-clone");
+			cloneLead.setAttribute("aria-hidden", "true");
+			track.insertBefore(cloneLead, track.firstChild);
+		}
+	}
 
 	function getStep() {
 		var first = track.querySelector(".carousel-slide");
@@ -81,74 +97,19 @@
 		return first.getBoundingClientRect().width + gap;
 	}
 
-	// Set scrollLeft without triggering the CSS smooth-scroll behavior.
-	function setScrollInstant(target) {
-		var saved = track.style.scrollBehavior;
-		track.style.scrollBehavior = "auto";
-		track.scrollLeft = target;
-		track.style.scrollBehavior = saved || "";
-	}
-
-	// Move k slides from front of DOM to end; compensate scrollLeft so the
-	// visible position doesn't change.
-	function rotateForward(k) {
-		var step = getStep();
-		for (var i = 0; i < k; i++) {
-			track.appendChild(track.firstElementChild);
-		}
-		setScrollInstant(track.scrollLeft - k * step);
-	}
-
-	// Move k slides from end of DOM to front; compensate scrollLeft.
-	function rotateBackward(k) {
-		var step = getStep();
-		for (var i = 0; i < k; i++) {
-			track.insertBefore(track.lastElementChild, track.firstElementChild);
-		}
-		setScrollInstant(track.scrollLeft + k * step);
-	}
-
-	// After every scroll settles, rotate the DOM so the user is back at "home"
-	// (scrollLeft = one step). Net effect: scrollLeft stays bounded, the slide
-	// array silently rotates, and the user perceives endless scrolling in both
-	// directions with no edges and no resets.
-	var settling = false;
-	var settleTimer;
-	function settle() {
-		if (settling) return;
-		var step = getStep();
-		if (!step) return;
-		var diff = Math.round(track.scrollLeft / step) - 1;
-		if (diff !== 0) {
-			settling = true;
-			if (diff > 0) rotateForward(diff);
-			else rotateBackward(-diff);
-			requestAnimationFrame(function() { settling = false; });
-		}
-	}
-	track.addEventListener("scroll", function() {
-		if (settling) return;
-		clearTimeout(settleTimer);
-		settleTimer = setTimeout(settle, 150);
-	});
+	// Start at the first original slide (DOM index = COPIES_EACH_SIDE * n).
+	// All COPIES_EACH_SIDE*n slides on each side give scroll headroom.
+	var saved = track.style.scrollBehavior;
+	track.style.scrollBehavior = "auto";
+	track.scrollLeft = COPIES_EACH_SIDE * n * getStep();
+	track.style.scrollBehavior = saved || "";
 
 	function scrollNext() {
 		track.scrollBy({ left: getStep(), behavior: "smooth" });
 	}
 	function scrollPrev() {
-		// Move the trailing slide to the front first so scrollLeft has room to
-		// animate backward by one step; then trigger the smooth scroll.
-		settling = true;
-		rotateBackward(1);
-		requestAnimationFrame(function() {
-			settling = false;
-			track.scrollBy({ left: -getStep(), behavior: "smooth" });
-		});
+		track.scrollBy({ left: -getStep(), behavior: "smooth" });
 	}
-
-	// Initial home position: scrollLeft = one step, so the original first slide
-	// (now at DOM index 1 after the pre-rotation) is the leftmost-visible slide.
-	setScrollInstant(getStep());
 
 	if (prevBtn) prevBtn.addEventListener("click", scrollPrev);
 	if (nextBtn) nextBtn.addEventListener("click", scrollNext);

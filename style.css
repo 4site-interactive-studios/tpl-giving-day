@@ -289,6 +289,7 @@ h1.section-title.sky { background: var(--sky); }
 	background: var(--evergreen);
 	color: white;
 	margin-top: 20px;
+	padding: 0 28px;
 	transition: 0.4s background;
 	text-align: center;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;

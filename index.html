@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#006837">
-<title>Trust for Public Land Giving Day</title>
-<meta name="description" content="Trust for Public Land (TPL) is a national, nonprofit, land conservation organization. Join us for Giving Day on Saturday, September 27 — Give, Act, Pledge." />
-<meta name="robots" content="index, follow" />
-<link rel="shortcut icon" type="image/ico" href="images/favicon.ico" />
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#006837">
+	<title>Trust for Public Land Giving Day</title>
+	<meta name="description"
+		content="Trust for Public Land (TPL) is a national, nonprofit, land conservation organization. Join us for Giving Day on Saturday, September 27 — Give, Act, Pledge." />
+	<meta name="robots" content="index, follow" />
+	<link rel="shortcut icon" type="image/ico" href="images/favicon.ico" />
 
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://4site-interactive-studios.github.io/tpl-giving-day/">
-<meta property="og:image" content="https://4site-interactive-studios.github.io/tpl-giving-day/images/givingday-hero-desktop.jpg">
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:site" content="@tpl_org" />
-<meta property="twitter:image" content="https://4site-interactive-studios.github.io/tpl-giving-day/images/givingday-hero-desktop.jpg">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://4site-interactive-studios.github.io/tpl-giving-day/">
+	<meta property="og:image"
+		content="https://4site-interactive-studios.github.io/tpl-giving-day/images/givingday-hero-desktop.jpg">
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:site" content="@tpl_org" />
+	<meta property="twitter:image"
+		content="https://4site-interactive-studios.github.io/tpl-giving-day/images/givingday-hero-desktop.jpg">
 
-<!--
+	<!--
 ========================================================
   EDIT THESE VALUES TO UPDATE THE PAGE
 ========================================================
@@ -29,287 +33,357 @@
   and donations made on this page bump it live via FRU's
   donationComplete event.
 -->
-<script>
-window.GIVING_DAY_CONFIG = {
-	give:   { total: 0, goal: 100000, fruMeterKey: "XLBAUDGT" },
-	act:    { total: 2382,  goal: 5000   },
-	pledge: { total: 36,    goal: 150    },
-	donors: [
-		{ name: "Rob P.",     state: "MA", amount: 128 },
-		{ name: "Nicole L.",  state: "MI", amount: 213 },
-		{ name: "Cynthia M.", state: "TN", amount: 213 },
-		{ name: "Bonita S.",  state: "MN", amount: 16  },
-		{ name: "Henry N.",   state: "CO", amount: 27  }
-	]
-};
-</script>
+	<script>
+		window.GIVING_DAY_CONFIG = {
+			give: { total: 0, goal: 100000, fruMeterKey: "XLBAUDGT" },
+			act: { total: 2382, goal: 5000 },
+			pledge: { total: 36, goal: 150 },
+			donors: [
+				{ name: "Rob P.", state: "MA", amount: 128 },
+				{ name: "Nicole L.", state: "MI", amount: 213 },
+				{ name: "Cynthia M.", state: "TN", amount: 213 },
+				{ name: "Bonita S.", state: "MN", amount: 16 },
+				{ name: "Henry N.", state: "CO", amount: 27 }
+			]
+		};
+	</script>
 
-<!-- Preload render-critical assets so they fetch in parallel with the stylesheet -->
-<link rel="preload" href="fonts/Helvetica_Neue_Bold.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="fonts/Helvetica_Neue_Medium.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="images/logo-light.svg" as="image">
-<link rel="preload" as="image" href="images/givingday-hero-mobile.jpg" media="(max-width: 650px)">
-<link rel="preload" as="image" href="images/givingday-hero-desktop.jpg" media="(min-width: 651px)">
+	<!-- Preload render-critical assets so they fetch in parallel with the stylesheet -->
+	<link rel="preload" href="fonts/Helvetica_Neue_Bold.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="fonts/Helvetica_Neue_Medium.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="images/logo-light.svg" as="image">
+	<link rel="preload" as="image" href="images/givingday-hero-mobile.jpg" media="(max-width: 650px)">
+	<link rel="preload" as="image" href="images/givingday-hero-desktop.jpg" media="(min-width: 651px)">
 
-<link rel="stylesheet" href="style.css">
-<script src="script.js" defer></script>
+	<link rel="stylesheet" href="style.css">
+	<script src="script.js" defer></script>
 
-<!-- Fundraise Up: the new standard for online giving -->
-<script>
-    (function (w, d, s, n, a) {
-if (!w[n]) {
-var l = 'call,catch,on,once,set,then,track,openCheckout'
-          .split(','), i, o = function (n) {
-return 'function' == typeof n ? o.l.push([arguments]) && o
-: function () { return o.l.push([n, arguments]) && o }
-          }, t = d.getElementsByTagName(s)[0],
-j = d.createElement(s); j.async = !0; j.src = 'https://cdn.fundraiseup.com/widget/' + a + '';
-t.parentNode.insertBefore(j, t); o.s = Date.now(); o.v = 5; o.h = w.location.href; o.l = [];
-for (i = 0; i < 8; i++)o[l[i]] = o(l[i]); w[n] = o
-      }
-    })(window, document, 'script', 'FundraiseUp', 'AMAYNAQU');
-</script>
-<!-- End Fundraise Up -->
+	<!-- Fundraise Up: the new standard for online giving -->
+	<script>
+		(function (w, d, s, n, a) {
+			if (!w[n]) {
+				var l = 'call,catch,on,once,set,then,track,openCheckout'
+					.split(','), i, o = function (n) {
+						return 'function' == typeof n ? o.l.push([arguments]) && o
+							: function () { return o.l.push([n, arguments]) && o }
+					}, t = d.getElementsByTagName(s)[0],
+					j = d.createElement(s); j.async = !0; j.src = 'https://cdn.fundraiseup.com/widget/' + a + '';
+				t.parentNode.insertBefore(j, t); o.s = Date.now(); o.v = 5; o.h = w.location.href; o.l = [];
+				for (i = 0; i < 8; i++)o[l[i]] = o(l[i]); w[n] = o
+			}
+		})(window, document, 'script', 'FundraiseUp', 'AMAYNAQU');
+	</script>
+	<!-- End Fundraise Up -->
 </head>
 
 <body class="mobile">
-<div id="body">
+	<div id="body">
 
-	<div id="wrapHeader">
-		<div id="header">
-			<div class="header-top">
-				<div class="site-information">
-					<a href="https://tpl.org/" title="Home" rel="home" class="site-logo" id="site-logo--link">
-						<img src="images/logo-light.svg" alt="Home">
-					</a>
+		<div id="wrapHeader">
+			<div id="header">
+				<div class="header-top">
+					<div class="site-information">
+						<a href="https://tpl.org/" title="Home" rel="home" class="site-logo" id="site-logo--link">
+							<img src="images/logo-light.svg" alt="Home">
+						</a>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 
-	<div id="wrapMain">
-		<div id="main">
-			<div id="contentFull">
-				<div class="container">
-					<div class="row">
-						<div class="col-sm-12">
+		<div id="wrapMain">
+			<div id="main">
+				<div id="contentFull">
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-12">
 
-<section class="gd-section" id="gd-title">
-	<a href="?form=FUNYMHPQUNH">
-		<img class="hero desktop-only" src="images/givingday-hero-desktop.jpg" alt="">
-		<img class="hero mobile-only" src="images/givingday-hero-mobile.jpg" alt="">
-	</a>
-	<div class="inset light-moss">
-		<h1><strong>Trust for Public Land Giving Day:</strong> Saturday, September 27!</h1>
-		<p>
-			National Public Lands Day is a chance for us all to come together as supporters and protectors of our public lands. Right now, we're seeing efforts by special interests and elected officials to endanger the survival of these precious spaces. If we want to protect our national parks, forests, and other public lands for future generations, we must stand up and speak out for them.
-		</p>
-		<p>
-			So, whether you Give, Act, Pledge (or all three!), together we're building a future where everyone has access to the outdoors and nature continues to be a source of strength, joy, and belonging for all.
-		</p>
-	</div>
-</section>
+								<section class="gd-section" id="gd-title">
+									<a href="?form=FUNYMHPQUNH">
+										<img class="hero desktop-only" src="images/givingday-hero-desktop.jpg" alt="">
+										<img class="hero mobile-only" src="images/givingday-hero-mobile.jpg" alt="">
+									</a>
+									<div class="inset light-moss">
+										<h1><strong>Trust for Public Land Giving Day:</strong> Saturday, September 27!</h1>
+										<p>
+											National Public Lands Day is a chance for us all to come together as supporters and protectors of
+											our public lands. Right now, we're seeing efforts by special interests and elected officials to
+											endanger the survival of these precious spaces. If we want to protect our national parks, forests,
+											and other public lands for future generations, we must stand up and speak out for them.
+										</p>
+										<p>
+											So, whether you Give, Act, Pledge (or all three!), together we're building a future where everyone
+											has access to the outdoors and nature continues to be a source of strength, joy, and belonging for
+											all.
+										</p>
+									</div>
+								</section>
 
-<section class="gd-section" id="gd-give">
-	<h2 class="section-title sun">Give</h2>
-	<div class="therm" id="therm-give">
-		<div class="therm-box">
-			<div class="therm-fill" id="therm-give-fill"></div>
-		</div>
-		<div class="therm-number" id="therm-give-number">&nbsp;</div>
-	</div>
-	<!-- Fundraise Up progress meter (XLBAUDGT) retired in favor of the custom thermometer above.
+								<section class="gd-section" id="gd-give">
+									<h2 class="section-title sun">Give</h2>
+									<div class="therm" id="therm-give">
+										<div class="therm-box">
+											<div class="therm-fill" id="therm-give-fill"></div>
+										</div>
+										<div class="therm-number" id="therm-give-number">&nbsp;</div>
+									</div>
+									<!-- Fundraise Up progress meter (XLBAUDGT) retired in favor of the custom thermometer above.
 	<div class="therm therm-embed">
 		<div class="therm-embed-inner">
 			<a href="#XLBAUDGT" style="display: none"></a>
 		</div>
 	</div>
 	-->
-	<div class="inset">
-		<div class="give-cols">
-			<div class="give-copy">
-				<h3><strong>Donate now</strong> and your gift will be matched 5x</h3>
-				<p>
-					Saturday, September 27 is National Public Lands Day. It's also Trust for Public Land's inaugural Giving Day!
-				</p>
-				<p>
-					This is one big day when we do every single thing we can to expand access to the outdoors, protect the places that shape our shared history, and ensure every person&mdash;regardless of zip code&mdash;can experience the power of nature.
-				</p>
-				<p>
-					We are coming together like never before to raise $100,000 to show our support for our outdoor shared spaces and public lands.
-				</p>
-				<p>
-					This is the best time to give. In fact, giving today is the very best way you can help protect our treasured public lands now and for generations to come.
-				</p>
-				<p>
-					<strong>Be a part of it with a 5x matched gift now, thanks to our partners at Altra! And, if you make a gift of $70 or more, we'll send you a special TPL tote bag as a thank you!</strong>
-				</p>
-			</div>
-			<div class="give-embed">
-				<a href="#XXRXVJGM" style="display: none"></a>
-			</div>
-		</div>
-	</div>
-	<div class="two-col">
-		<img id="section-image" src="images/givingday-give-photo.png" alt="">
-		<div id="donor-table">
-			<strong>Most recent donations:</strong>
-			<table id="most-recent">
-				<tr><td></td><td></td></tr>
-				<tr><td></td><td></td></tr>
-				<tr><td></td><td></td></tr>
-				<tr><td></td><td></td></tr>
-				<tr><td></td><td></td></tr>
-			</table>
-		</div>
-	</div>
-</section>
+									<div class="inset">
+										<div class="give-cols">
+											<div class="give-copy">
+												<h3><strong>Donate now</strong> and your gift will be matched 5x</h3>
+												<p>
+													Saturday, September 27 is National Public Lands Day. It's also Trust for Public Land's
+													inaugural Giving Day!
+												</p>
+												<p>
+													This is one big day when we do every single thing we can to expand access to the outdoors,
+													protect the places that shape our shared history, and ensure every person&mdash;regardless of
+													zip code&mdash;can experience the power of nature.
+												</p>
+												<p>
+													We are coming together like never before to raise $100,000 to show our support for our outdoor
+													shared spaces and public lands.
+												</p>
+												<p>
+													This is the best time to give. In fact, giving today is the very best way you can help protect
+													our treasured public lands now and for generations to come.
+												</p>
+												<p>
+													<strong>Be a part of it with a 5x matched gift now, thanks to our partners at Altra! And, if
+														you make a gift of $70 or more, we'll send you a special TPL tote bag as a thank
+														you!</strong>
+												</p>
+											</div>
+											<div class="give-embed">
+												<a href="#XXRXVJGM" style="display: none"></a>
+											</div>
+										</div>
+									</div>
+									<div class="two-col">
+										<img id="section-image" src="images/givingday-give-photo.png" alt="">
+										<div id="donor-table">
+											<strong>Most recent donations:</strong>
+											<table id="most-recent">
+												<tr>
+													<td></td>
+													<td></td>
+												</tr>
+												<tr>
+													<td></td>
+													<td></td>
+												</tr>
+												<tr>
+													<td></td>
+													<td></td>
+												</tr>
+												<tr>
+													<td></td>
+													<td></td>
+												</tr>
+												<tr>
+													<td></td>
+													<td></td>
+												</tr>
+											</table>
+										</div>
+									</div>
+								</section>
 
-<section class="gd-section" id="gd-act">
-	<h2 class="section-title grass">Act</h2>
-	<div class="therm" id="therm-act">
-		<div class="therm-box">
-			<div class="therm-fill" id="therm-act-fill"></div>
-		</div>
-		<div class="therm-number" id="therm-act-number">&nbsp;</div>
-	</div>
-	<div class="inset">
-		<img class="section-hero" src="images/givingday-act-photo.jpg" alt="">
-		<div class="act-cols">
-			<div class="act-copy">
-				<h3><strong>Tell Congress:</strong> Keep Public Lands in Public Hands</h3>
-				<p>
-					Right now, special interests are pushing to strip protections from our parks, trails, and open spaces&mdash;opening the door to development and closing access for future generations. Without strong protections, access to these spaces could disappear.
-				</p>
-				<p>
-					Congress is considering the bipartisan Public Lands in Public Hands Act, which would prevent the sale or transfer of most federal public lands and ensure they remain open for all. We need your voice.
-				</p>
-				<p>
-					<strong>Take one minute now to keep public lands in public hands by signing the petition, and urging Congress to protect our beloved green spaces!</strong>
-				</p>
-				<a href="https://secure.tpl.org/site/Advocacy?cmd=display&page=UserAction&id=2189" target="_blank" rel="noopener noreferrer" class="green-btn fixed-width">Act Now</a>
-			</div>
-			<div class="act-embed">
-				<a href="#XXGFQTYR" style="display: none"></a>
-			</div>
-		</div>
-	</div>
-</section>
+								<section class="gd-section" id="gd-act">
+									<h2 class="section-title grass">Act</h2>
+									<div class="therm" id="therm-act">
+										<div class="therm-box">
+											<div class="therm-fill" id="therm-act-fill"></div>
+										</div>
+										<div class="therm-number" id="therm-act-number">&nbsp;</div>
+									</div>
+									<div class="inset">
+										<img class="section-hero" src="images/givingday-act-photo.jpg" alt="">
+										<div class="act-cols">
+											<div class="act-copy">
+												<h3><strong>Tell Congress:</strong> Keep Public Lands in Public Hands</h3>
+												<p>
+													Right now, special interests are pushing to strip protections from our parks, trails, and open
+													spaces&mdash;opening the door to development and closing access for future generations.
+													Without strong protections, access to these spaces could disappear.
+												</p>
+												<p>
+													Congress is considering the bipartisan Public Lands in Public Hands Act, which would prevent
+													the sale or transfer of most federal public lands and ensure they remain open for all. We need
+													your voice.
+												</p>
+												<p>
+													<strong>Take one minute now to keep public lands in public hands by signing the petition, and
+														urging Congress to protect our beloved green spaces!</strong>
+												</p>
+												<a href="https://secure.tpl.org/site/Advocacy?cmd=display&page=UserAction&id=2189"
+													target="_blank" rel="noopener noreferrer" class="green-btn fixed-width">Act Now</a>
+											</div>
+											<div class="act-embed">
+												<a href="#XXGFQTYR" style="display: none"></a>
+											</div>
+										</div>
+									</div>
+								</section>
 
-<section class="gd-section" id="gd-pledge">
-	<h2 class="section-title sky">Pledge</h2>
-	<div class="therm" id="therm-pledge">
-		<div class="therm-box">
-			<div class="therm-fill" id="therm-pledge-fill"></div>
-		</div>
-		<div class="therm-number" id="therm-pledge-number">&nbsp;</div>
-	</div>
-	<div class="inset">
-		<img class="section-hero" src="images/givingday-pledge-photo.jpg" alt="">
-		<h3><strong>Get outside!</strong> That's right, we want <em>you</em> to pledge to get outdoors!</h3>
-		<p>
-			The challenges facing our parks and public lands are real&mdash;and growing. In times of uncertainty, our values guide us. This moment requires our full attention and collective action so that everyone has access to the outdoors and nature continues to be a source of strength, joy, and belonging for all.
-		</p>
-		<p>
-			We know that green spaces have the power to heal&mdash;lowering stress and easing anxiety. That's why, one of the most powerful ways you can stand with Trust for Public Land is also the simplest: step outside!
-		</p>
-		<p>
-			Whether it's a quick walk to your local park or a last-minute getaway to a National Park you've never visited, we hope you can celebrate our first giving day by visiting your public lands.
-		</p>
-		<p>
-			<strong>Will you be one of the 8,000 people who pledge to get outdoors? Sign the pledge now, then get out there and touch some grass!</strong>
-		</p>
-		<a href="https://secure.tpl.org/site/Advocacy?cmd=display&page=UserAction&id=2185" target="_blank" rel="noopener noreferrer" class="green-btn fixed-width">Pledge Time</a>
-	</div>
-</section>
+								<section class="gd-section" id="gd-pledge">
+									<h2 class="section-title sky">Pledge</h2>
+									<div class="therm" id="therm-pledge">
+										<div class="therm-box">
+											<div class="therm-fill" id="therm-pledge-fill"></div>
+										</div>
+										<div class="therm-number" id="therm-pledge-number">&nbsp;</div>
+									</div>
+									<div class="inset">
+										<img class="section-hero" src="images/givingday-pledge-photo.jpg" alt="">
+										<h3><strong>Get outside!</strong> That's right, we want <em>you</em> to pledge to get outdoors!</h3>
+										<p>
+											The challenges facing our parks and public lands are real&mdash;and growing. In times of
+											uncertainty, our values guide us. This moment requires our full attention and collective action so
+											that everyone has access to the outdoors and nature continues to be a source of strength, joy, and
+											belonging for all.
+										</p>
+										<p>
+											We know that green spaces have the power to heal&mdash;lowering stress and easing anxiety. That's
+											why, one of the most powerful ways you can stand with Trust for Public Land is also the simplest:
+											step outside!
+										</p>
+										<p>
+											Whether it's a quick walk to your local park or a last-minute getaway to a National Park you've
+											never visited, we hope you can celebrate our first giving day by visiting your public lands.
+										</p>
+										<p>
+											<strong>Will you be one of the 8,000 people who pledge to get outdoors? Sign the pledge now, then
+												get out there and touch some grass!</strong>
+										</p>
+										<a href="https://secure.tpl.org/site/Advocacy?cmd=display&page=UserAction&id=2185" target="_blank"
+											rel="noopener noreferrer" class="green-btn fixed-width">Pledge Time</a>
+									</div>
+								</section>
 
-<section class="gd-section gd-impact" id="gd-impact">
-	<div class="impact-intro">
-		<div class="impact-headline">
-			<h2>We're <strong>Growing Nature's Reach</strong>, park by park, neighborhood by neighborhood.</h2>
-		</div>
-		<div class="impact-blurb">
-			<p>Every gift, every signature, every pledge adds up to something bigger. Together, we're <strong>opening up the outdoors</strong> for the millions of Americans who still live without access to nearby green space&mdash;turning vacant lots into community gardens, abandoned rail lines into trails, and forgotten waterways into the parks of tomorrow.</p>
-			<p>Want to see what's possible when we all show up for the outdoors?</p>
-			<a href="https://www.tpl.org/our-impact" class="green-btn">See Our Impact</a>
-		</div>
-	</div>
+								<section class="gd-section gd-impact" id="gd-impact">
+									<div class="impact-intro">
+										<div class="impact-headline">
+											<h2>We're <strong>Growing Nature's Reach</strong>, park by park, neighborhood by neighborhood.
+											</h2>
+										</div>
+										<div class="impact-blurb">
+											<p>Every gift, every signature, every pledge adds up to something bigger. Together, we're
+												<strong>opening up the outdoors</strong> for the millions of Americans who still live without
+												access to nearby green space&mdash;turning vacant lots into community gardens, abandoned rail
+												lines into trails, and forgotten waterways into the parks of tomorrow.</p>
+											<p>Want to see what's possible when we all show up for the outdoors?</p>
+											<a href="https://www.tpl.org/our-impact" class="green-btn">See Our Impact</a>
+										</div>
+									</div>
 
-	<div class="impact-accordion">
-		<article class="accordion-panel is-open">
-			<button class="accordion-head" type="button" aria-expanded="true">
-				<span class="accordion-image"><img src="https://images.jifo.co/63377765_1741204890101.gif" alt="Map of America's National Scenic Trails"></span>
-				<span class="accordion-title">Do You Know Your National Scenic Trails?</span>
-			</button>
-			<div class="accordion-body">
-				<p>There are 11 congressionally designated footpaths stretching north to south and east to west across the United States. See where and how Trust for Public Land is contributing to this impressive collection of American outdoor treasures.</p>
-				<a href="https://www.tpl.org/blog/do-you-know-your-national-scenic-trails" class="green-btn">Read the Story</a>
-			</div>
-		</article>
-		<article class="accordion-panel">
-			<button class="accordion-head" type="button" aria-expanded="false">
-				<span class="accordion-image"><img src="https://e7jecw7o93n.exactdn.com/wp-content/uploads/2022/08/ut_zion_05182022_053-scaled.jpg" alt="Zion National Park"></span>
-				<span class="accordion-title">National Parks We Love&mdash;and the Work That Protects Them</span>
-			</button>
-			<div class="accordion-body">
-				<p>Close your eyes and think about where you are happiest outside. For many of us, the places that hold our fondest memories are our national parks. But they don&rsquo;t stay this spectacular by accident.</p>
-				<a href="https://www.tpl.org/blog/national-parks-we-have-protected" class="green-btn">Read the Story</a>
-			</div>
-		</article>
-		<article class="accordion-panel">
-			<button class="accordion-head" type="button" aria-expanded="false">
-				<span class="accordion-image"><img src="https://e7jecw7o93n.exactdn.com/wp-content/uploads/2022/08/ut_zion_05182022_053-scaled.jpg" alt="Open green space at a Montana park"></span>
-				<span class="accordion-title">10 Things to Do at Your Local Park</span>
-			</button>
-			<div class="accordion-body">
-				<p>Swings and slides? Great. Sidewalk strolls? Lovely. But that patch of green has more up its sleeve. Parks are public lands. Spice up your evening or weekend with one of these 10 not-to-be-missed activities.</p>
-				<a href="https://www.tpl.org/blog/ten-things-to-do-at-your-local-park" class="green-btn">Read the Story</a>
-			</div>
-		</article>
-	</div>
-</section>
+									<div class="impact-accordion">
+										<article class="accordion-panel is-open">
+											<button class="accordion-head" type="button" aria-expanded="true">
+												<span class="accordion-image"><img src="https://images.jifo.co/63377765_1741204890101.gif"
+														alt="Map of America's National Scenic Trails"></span>
+												<span class="accordion-title">Do You Know Your National Scenic Trails?</span>
+											</button>
+											<div class="accordion-body">
+												<p>There are 11 congressionally designated footpaths stretching north to south and east to west
+													across the United States. See where and how Trust for Public Land is contributing to this
+													impressive collection of American outdoor treasures.</p>
+												<a href="https://www.tpl.org/blog/do-you-know-your-national-scenic-trails"
+													class="green-btn">Read the Story</a>
+											</div>
+										</article>
+										<article class="accordion-panel">
+											<button class="accordion-head" type="button" aria-expanded="false">
+												<span class="accordion-image"><img
+														src="https://e7jecw7o93n.exactdn.com/wp-content/uploads/2022/08/ut_zion_05182022_053-scaled.jpg"
+														alt="Zion National Park"></span>
+												<span class="accordion-title">National Parks We Love&mdash;and the Work That Protects
+													Them</span>
+											</button>
+											<div class="accordion-body">
+												<p>Close your eyes and think about where you are happiest outside. For many of us, the places
+													that hold our fondest memories are our national parks. But they don&rsquo;t stay this
+													spectacular by accident.</p>
+												<a href="https://www.tpl.org/blog/national-parks-we-have-protected" class="green-btn">Read the
+													Story</a>
+											</div>
+										</article>
+										<article class="accordion-panel">
+											<button class="accordion-head" type="button" aria-expanded="false">
+												<span class="accordion-image"><img
+														src="https://e7jecw7o93n.exactdn.com/wp-content/uploads/2022/08/ut_zion_05182022_053-scaled.jpg"
+														alt="Open green space at a Montana park"></span>
+												<span class="accordion-title">10 Things to Do at Your Local Park</span>
+											</button>
+											<div class="accordion-body">
+												<p>Swings and slides? Great. Sidewalk strolls? Lovely. But that patch of green has more up its
+													sleeve. Parks are public lands. Spice up your evening or weekend with one of these 10
+													not-to-be-missed activities.</p>
+												<a href="https://www.tpl.org/blog/ten-things-to-do-at-your-local-park" class="green-btn">Read
+													the Story</a>
+											</div>
+										</article>
+									</div>
+								</section>
 
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 
-	<div id="wrapFooter">
-		<div id="footer">
-			<div class="footer-second clearfix footer-second2">
-				<div class="row-fluid">
-					<div class="span5">
-						<div class="region region-footer-left">
-							<div id="block-block-13" class="block block-block">
-								<div class="content">
-									<a href="https://tpl.org"><img src="images/logo-light.svg" alt="Trust for Public Land Logo" /></a>
-									<p>The Trust for Public Land is an IRS approved 501(c)(3) tax-exempt organization. All donations are tax deductible to the extent provided by law. Our Federal Identification Number (EIN) is 23-7222333.
-										<br> &copy; <span id="footer-year">2026</span> Trust for Public Land
-									</p>
+		<div id="wrapFooter">
+			<div id="footer">
+				<div class="footer-second clearfix footer-second2">
+					<div class="row-fluid">
+						<div class="span5">
+							<div class="region region-footer-left">
+								<div id="block-block-13" class="block block-block">
+									<div class="content">
+										<a href="https://tpl.org"><img src="images/logo-light.svg" alt="Trust for Public Land Logo" /></a>
+										<p>The Trust for Public Land is an IRS approved 501(c)(3) tax-exempt organization. All donations are
+											tax deductible to the extent provided by law. Our Federal Identification Number (EIN) is
+											23-7222333.
+											<br> &copy; <span id="footer-year">2026</span> Trust for Public Land
+										</p>
+									</div>
 								</div>
 							</div>
 						</div>
-					</div>
-					<div class="span7">
-						<div class="region region-footer-right">
-							<div id="block-block-14" class="block block-block">
-								<div class="content">
-									<ul>
-										<li><a href="https://www.tpl.org/resource/legal-disclosure-terms-use">Legal disclosure and terms of use</a></li>
-										<li><span>|</span> <a href="https://www.tpl.org/privacy-policy">Privacy policy</a></li>
-									</ul>
+						<div class="span7">
+							<div class="region region-footer-right">
+								<div id="block-block-14" class="block block-block">
+									<div class="content">
+										<ul>
+											<li><a href="https://www.tpl.org/resource/legal-disclosure-terms-use">Legal disclosure and terms
+													of use</a></li>
+											<li><span>|</span> <a href="https://www.tpl.org/privacy-policy">Privacy policy</a></li>
+										</ul>
+									</div>
 								</div>
-							</div>
-							<div id="block-block-16" class="block block-block">
-								<div class="content">
-									<p>
-										<img src="images/seal_green_tagline.png" width="92" alt="TPL Seal" />
-										<a href="https://www.charitywatch.org/charities/trust-for-public-land" target="_blank" rel="noopener noreferrer"><img class="charity-watch" src="images/charitywatch-logo.png" alt="Charity Watch" width="92" /></a>
-										<a href="http://www.give.org/charity-reviews/national/trust-for-public-land-the-in-san-francisco-ca-1406" target="_blank" rel="noopener noreferrer"><img class="bbb-badge" src="images/bbb.png" alt="BBB Accredited Charity" width="145" /></a>
-										<a href="https://www.guidestar.org/profile/23-7222333" target="_blank" rel="noopener noreferrer"><img src="images/guidestar-transparency-seal.svg" width="92" alt="GuideStar Transparency Seal" /></a>
-									</p>
+								<div id="block-block-16" class="block block-block">
+									<div class="content">
+										<p>
+											<img src="images/seal_green_tagline.png" width="92" alt="TPL Seal" />
+											<a href="https://www.charitywatch.org/charities/trust-for-public-land" target="_blank"
+												rel="noopener noreferrer"><img class="charity-watch" src="images/charitywatch-logo.png"
+													alt="Charity Watch" width="92" /></a>
+											<a href="http://www.give.org/charity-reviews/national/trust-for-public-land-the-in-san-francisco-ca-1406"
+												target="_blank" rel="noopener noreferrer"><img class="bbb-badge" src="images/bbb.png"
+													alt="BBB Accredited Charity" width="145" /></a>
+											<a href="https://www.guidestar.org/profile/23-7222333" target="_blank"
+												rel="noopener noreferrer"><img src="images/guidestar-transparency-seal.svg" width="92"
+													alt="GuideStar Transparency Seal" /></a>
+										</p>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -317,9 +391,9 @@ for (i = 0; i < 8; i++)o[l[i]] = o(l[i]); w[n] = o
 				</div>
 			</div>
 		</div>
-	</div>
 
-</div>
+	</div>
 
 </body>
+
 </html>

@@ -17,65 +17,210 @@
 /* ====================================================
    Fonts
    ==================================================== */
-@font-face {
-  font-family: "Helvetica Neue";
-  font-weight: 300;
-  src:
-    url("fonts/Helvetica_Neue_Light.woff") format("woff"),
-    url("fonts/Helvetica_Neue_Light.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Helvetica Neue";
-  font-weight: 400;
-  src:
-    url("fonts/Helvetica_Neue_Medium.woff") format("woff"),
-    url("fonts/Helvetica_Neue_Medium.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Helvetica Neue";
-  font-weight: 500;
-  src:
-    url("fonts/Helvetica_Neue_Roman.woff") format("woff"),
-    url("fonts/Helvetica_Neue_Roman.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Helvetica Neue";
-  font-weight: bold;
-  src:
-    url("fonts/Helvetica_Neue_Bold.woff") format("woff"),
-    url("fonts/Helvetica_Neue_Bold.woff2") format("woff2");
-}
+@import url("https://use.typekit.net/tja5vky.css");
+
 @font-face {
   font-family: "PT Sans";
-  font-weight: 400;
-  src:
-    url("fonts/pt-sans-v12-latin-regular.woff") format("woff"),
-    url("fonts/pt-sans-v12-latin-regular.woff2") format("woff2");
-}
-@font-face {
-  font-family: "PT Sans";
-  font-weight: 400;
   font-style: italic;
-  src:
-    url("fonts/pt-sans-v12-latin-italic.woff") format("woff"),
-    url("fonts/pt-sans-v12-latin-italic.woff2") format("woff2");
-}
-@font-face {
-  font-family: "PT Sans";
-  font-weight: bold;
-  src:
-    url("fonts/pt-sans-v12-latin-700.woff") format("woff"),
-    url("fonts/pt-sans-v12-latin-700.woff2") format("woff2");
-}
-@font-face {
-  font-family: "PT Sans";
-  font-weight: bold;
-  font-style: italic;
-  src:
-    url("fonts/pt-sans-v12-latin-700italic.woff") format("woff"),
-    url("fonts/pt-sans-v12-latin-700italic.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ptsans/v18/jizYRExUiTo99u79D0e0ysmIAjcQ-woy.woff2)
+    format("woff2");
+  unicode-range:
+    U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
 }
 
+/* cyrillic */
+@font-face {
+  font-family: "PT Sans";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ptsans/v18/jizYRExUiTo99u79D0e0w8mIAjcQ-woy.woff2)
+    format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+/* latin-ext */
+@font-face {
+  font-family: "PT Sans";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ptsans/v18/jizYRExUiTo99u79D0e0ycmIAjcQ-woy.woff2)
+    format("woff2");
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+    U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+  font-family: "PT Sans";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ptsans/v18/jizYRExUiTo99u79D0e0x8mIAjcQ-w.woff2)
+    format("woff2");
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212,
+    U+2215, U+FEFF, U+FFFD;
+}
+
+/* cyrillic-ext */
+@font-face {
+  font-family: "PT Sans";
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ptsans/v18/jizdRExUiTo99u79D0e8fOydIhUd0TA7i2bI.woff2)
+    format("woff2");
+  unicode-range:
+    U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+
+/* cyrillic */
+@font-face {
+  font-family: "PT Sans";
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ptsans/v18/jizdRExUiTo99u79D0e8fOydKxUd0TA7i2bI.woff2)
+    format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+/* latin-ext */
+@font-face {
+  font-family: "PT Sans";
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ptsans/v18/jizdRExUiTo99u79D0e8fOydIRUd0TA7i2bI.woff2)
+    format("woff2");
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+    U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+  font-family: "PT Sans";
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ptsans/v18/jizdRExUiTo99u79D0e8fOydLxUd0TA7iw.woff2)
+    format("woff2");
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212,
+    U+2215, U+FEFF, U+FFFD;
+}
+
+/* cyrillic-ext */
+@font-face {
+  font-family: "PT Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ptsans/v18/jizaRExUiTo99u79D0-ExcOPIDUg-g.woff2)
+    format("woff2");
+  unicode-range:
+    U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+
+/* cyrillic */
+@font-face {
+  font-family: "PT Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ptsans/v18/jizaRExUiTo99u79D0aExcOPIDUg-g.woff2)
+    format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+/* latin-ext */
+@font-face {
+  font-family: "PT Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ptsans/v18/jizaRExUiTo99u79D0yExcOPIDUg-g.woff2)
+    format("woff2");
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+    U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+  font-family: "PT Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ptsans/v18/jizaRExUiTo99u79D0KExcOPIDU.woff2)
+    format("woff2");
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212,
+    U+2215, U+FEFF, U+FFFD;
+}
+
+/* cyrillic-ext */
+@font-face {
+  font-family: "PT Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ptsans/v18/jizfRExUiTo99u79B_mh0OOtLR8a8zILig.woff2)
+    format("woff2");
+  unicode-range:
+    U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+
+/* cyrillic */
+@font-face {
+  font-family: "PT Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ptsans/v18/jizfRExUiTo99u79B_mh0OqtLR8a8zILig.woff2)
+    format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+/* latin-ext */
+@font-face {
+  font-family: "PT Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ptsans/v18/jizfRExUiTo99u79B_mh0OCtLR8a8zILig.woff2)
+    format("woff2");
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+    U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+  font-family: "PT Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ptsans/v18/jizfRExUiTo99u79B_mh0O6tLR8a8zI.woff2)
+    format("woff2");
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212,
+    U+2215, U+FEFF, U+FFFD;
+}
 /* ====================================================
    Minimal resets + base
    (replaces Bootstrap/normalize)
@@ -450,15 +595,15 @@ body #footer a {
   background-size: contain;
 }
 #therm-give-fill::after {
-  background-image: url(images/givingday-give-thermometer.webp);
+  background-image: url("https://bd6ca9cefa6fb6e0adf1-c2f9aa1adb9f60a775f60074e4c86031.ssl.cf5.rackcdn.com/20002/givingday-give-thermometer.webp?v=1785877158000");
 }
 #therm-act-fill::after {
-  background-image: url(images/givingday-act-thermometer.webp);
+  background-image: url("https://bd6ca9cefa6fb6e0adf1-c2f9aa1adb9f60a775f60074e4c86031.ssl.cf5.rackcdn.com/20002/givingday-act-thermometer.webp?v=1785877158000");
 }
 #therm-pledge-fill::after {
   left: calc(100% - 13px);
   width: 50px;
-  background-image: url(images/givingday-pledge-thermometer.webp);
+  background-image: url("https://bd6ca9cefa6fb6e0adf1-c2f9aa1adb9f60a775f60074e4c86031.ssl.cf5.rackcdn.com/20002/givingday-pledge-thermometer.webp?v=1785877158000");
 }
 .therm-number {
   padding-top: 8px;

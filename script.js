@@ -23,22 +23,79 @@
 		if (isNaN(pct)) pct = 0;
 		fillElm.style.width = pct + "%";
 
-		var shown = 0;
-		var step = Math.max(1, Math.ceil(count / 80));
-		var iv = window.setInterval(function() {
-			shown = Math.min(count, shown + step);
-			numberElm.innerHTML = prefix + commafy(shown) + " of " + prefix + commafy(goal) + " goal";
-			if (shown >= count) window.clearInterval(iv);
-		}, 50);
+		if (numberElm._thermRaf) window.cancelAnimationFrame(numberElm._thermRaf);
+		var from = numberElm._thermShown || 0;
+		var duration = 4000;
+		var start = null;
 
-		if (count === 0) {
+		if (count <= 0) {
+			numberElm._thermShown = 0;
 			numberElm.innerHTML = prefix + "0 of " + prefix + commafy(goal) + " goal";
+			return;
 		}
+
+		function tick(ts) {
+			if (start === null) start = ts;
+			var t = Math.min((ts - start) / duration, 1);
+			var shown = Math.round(from + (count - from) * t);
+			numberElm._thermShown = shown;
+			numberElm.innerHTML = prefix + commafy(shown) + " of " + prefix + commafy(goal) + " goal";
+			numberElm._thermRaf = t < 1 ? window.requestAnimationFrame(tick) : null;
+		}
+		numberElm._thermRaf = window.requestAnimationFrame(tick);
 	}
 
-	updateThermometer(cfg.give.total,   cfg.give.goal,
-		document.getElementById("therm-give-fill"),
-		document.getElementById("therm-give-number"), "$");
+	var giveFill = document.getElementById("therm-give-fill");
+	var giveNumber = document.getElementById("therm-give-number");
+	var giveGoal = cfg.give.goal;
+	var giveTotal = cfg.give.total;
+
+	function renderGiveTherm() {
+		updateThermometer(giveTotal, giveGoal, giveFill, giveNumber, "$");
+	}
+
+	renderGiveTherm();
+
+	// Pull the live raised/goal values from the Fundraise Up goal meter
+	// element (same data the embedded meter displays). Its config is a
+	// JSONP-style file on FRU's CDN; no CORS, so load it via script tag
+	// and capture the payload through FUN.elements.addElementContent.
+	(function syncFromFruMeter() {
+		var key = cfg.give.fruMeterKey;
+		if (!key) return;
+		window.FUN = window.FUN || {};
+		window.FUN.elements = window.FUN.elements || {};
+		var prevAdd = window.FUN.elements.addElementContent;
+		window.FUN.elements.addElementContent = function(payload) {
+			try {
+				if (payload && payload.key === key && payload.data && payload.data.live) {
+					var live = payload.data.live;
+					var conf = payload.config || {};
+					var raised = typeof live.value === "number" ? live.value : null;
+					if (raised !== null && conf.isMatchAmountEnabled && conf.matchingFactor > 1) {
+						raised *= conf.matchingFactor;
+					}
+					if (raised !== null) giveTotal = Math.round(raised);
+					if (typeof conf.goalAmount === "number" && conf.goalAmount > 0) giveGoal = conf.goalAmount;
+					renderGiveTherm();
+				}
+			} catch (e) {}
+			if (typeof prevAdd === "function") return prevAdd.apply(this, arguments);
+		};
+		var s = document.createElement("script");
+		s.src = "https://cdn.fundraiseup.com/elements-data/" + key + ".js";
+		s.async = true;
+		document.head.appendChild(s);
+	})();
+
+	if (typeof window.FundraiseUp === "function") {
+		window.FundraiseUp.on("donationComplete", function(details) {
+			if (!details || !details.donation || typeof details.donation.amount !== "number") return;
+			giveTotal += Math.round(details.donation.amount);
+			renderGiveTherm();
+		});
+	}
+
 	updateThermometer(cfg.act.total,    cfg.act.goal,
 		document.getElementById("therm-act-fill"),
 		document.getElementById("therm-act-number"), "");

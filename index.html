@@ -23,10 +23,15 @@
 ========================================================
   Each number below drives one thermometer or table row.
   No build step, no API — just change the value and save.
+  give.total/goal are fallbacks — on load the Give thermometer
+  syncs itself to the Fundraise Up goal meter element named by
+  fruMeterKey (the same values the embedded meter displays),
+  and donations made on this page bump it live via FRU's
+  donationComplete event.
 -->
 <script>
 window.GIVING_DAY_CONFIG = {
-	give:   { total: 75590, goal: 100000 },
+	give:   { total: 0, goal: 100000, fruMeterKey: "XLBAUDGT" },
 	act:    { total: 2382,  goal: 5000   },
 	pledge: { total: 36,    goal: 150    },
 	donors: [
@@ -107,19 +112,19 @@ for (i = 0; i < 8; i++)o[l[i]] = o(l[i]); w[n] = o
 
 <section class="gd-section" id="gd-give">
 	<h2 class="section-title sun">Give</h2>
-	<!-- Legacy thermometer kept for reference — Fundraise Up progress meter (XLBAUDGT) is live instead.
 	<div class="therm" id="therm-give">
 		<div class="therm-box">
 			<div class="therm-fill" id="therm-give-fill"></div>
 		</div>
 		<div class="therm-number" id="therm-give-number">&nbsp;</div>
 	</div>
-	-->
+	<!-- Fundraise Up progress meter (XLBAUDGT) retired in favor of the custom thermometer above.
 	<div class="therm therm-embed">
 		<div class="therm-embed-inner">
 			<a href="#XLBAUDGT" style="display: none"></a>
 		</div>
 	</div>
+	-->
 	<div class="inset">
 		<div class="give-cols">
 			<div class="give-copy">

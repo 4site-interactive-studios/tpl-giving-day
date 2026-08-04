@@ -450,15 +450,15 @@ body #footer a {
   background-size: contain;
 }
 #therm-give-fill::after {
-  background-image: url(images/givingday-give-thermometer.png);
+  background-image: url(images/givingday-give-thermometer.webp);
 }
 #therm-act-fill::after {
-  background-image: url(images/givingday-act-thermometer.png);
+  background-image: url(images/givingday-act-thermometer.webp);
 }
 #therm-pledge-fill::after {
   left: calc(100% - 13px);
   width: 50px;
-  background-image: url(images/givingday-pledge-thermometer.png);
+  background-image: url(images/givingday-pledge-thermometer.webp);
 }
 .therm-number {
   padding-top: 8px;
